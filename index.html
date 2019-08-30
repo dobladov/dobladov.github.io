@@ -1,21 +1,11 @@
-const header = require("./header.11ty.js")
 
-class layout {
-  data() {
-    return {
-      title: "Hello"
-    }
-  }
-
-  render({title, content}) {
-    return `
     <!DOCTYPE html>
       <html lang="en">
       <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>${ title }</title>
+      <title>Hello</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
       <style>
       body {
@@ -47,15 +37,33 @@ class layout {
 
       </head>
       <body>
-        ${header({title})}
+        
+  <style>
+    header > nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+  </style>
+
+  <header>
+    <nav>
+      <a href="/">
+        Home
+      </a>
+      <a href="/blog">
+        Blog
+      </a>
+    </nav>
+  </header>
+
         <div class="wrapper">
-          <h1>${ title }</h1>
-          ${ content }
+          <h1>Hello</h1>
+          <p>Hi! I'm Daniel, sometimes I <a href="https://github.com/dobladov/">develop</a> stuff.</p>
+
         </div>
     </body>
     </html>
-    `
-  }
-}
-
-module.exports = layout
+    
