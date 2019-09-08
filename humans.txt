@@ -1,0 +1,17 @@
+
+      /* TEAM */
+
+      Daniel Doblado
+      - Site: dobladov.github.io
+      - Email: danieldoblado@gmail.com
+
+
+      /* SITE */
+      
+      - Standards: HTML, CSS, Javascript
+      - Software: Eleventy
+      - Tools: vscode
+      - Hosting: GitHub
+      - Code: https://github.com/dobladov/personal-blog
+
+    

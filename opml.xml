@@ -1,0 +1,16 @@
+
+      <opml version="2.0">
+        <head>
+          <title>Daniel's blog</title>
+          <dateCreated>Sun, 08 Sep 2019 16:53:32 GMT</dateCreated>
+          <ownerName>Daniel Doblado</ownerName>
+        </head>
+        <body>
+          <outline text="Daniel's blog feeds" title="Daniel's blog feeds"  type="include">
+            <!-- <outline title="RSS 2.0 feed" text="RSS 2.0 feed" htmlUrl="https://sizeof.cat/" type="rss" xmlUrl="https://sizeof.cat/index.xml"/> -->
+            <outline title="Atom feed" text="Atom feed" htmlUrl="https://dobladov.github.io" type="atom" xmlUrl="https://dobladov.github.io/feed.xml"/>
+            <outline title="JSON feed" text="JSON feed" htmlUrl="https://dobladov.github.io" type="json" xmlUrl="https://dobladov.github.io/feed.json"/>
+          </outline>
+        </body>
+      </opml>
+    
