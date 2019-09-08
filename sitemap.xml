@@ -11,14 +11,6 @@
       
 
         <url>
-          <loc>https://dobladov.github.io/blog/first-post/</loc>
-          <lastmod>2019-09-08T11:42:47.680Z</lastmod>
-          <changefreq>monthly</changefreq>
-          <priority>0.5</priority>
-        </url>
-      
-
-        <url>
           <loc>https://dobladov.github.io/blog/lang/</loc>
           <lastmod>2019-09-08T11:43:05.899Z</lastmod>
           <changefreq>monthly</changefreq>
@@ -37,6 +29,14 @@
         <url>
           <loc>https://dobladov.github.io/blog/test/</loc>
           <lastmod>2019-09-08T16:46:02.641Z</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.5</priority>
+        </url>
+      
+
+        <url>
+          <loc>https://dobladov.github.io/blog/first-post/</loc>
+          <lastmod>2019-09-08T21:34:42.688Z</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.5</priority>
         </url>
