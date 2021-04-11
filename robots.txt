@@ -3,5 +3,5 @@ Disallow: /
 
 User-agent: *
 Disallow: /resume
-Sitemap: https://odyssey.codes/sitemap.xml
-Host: https://odyssey.codes
+Sitemap: https://dobladov.github.io/sitemap.xml
+Host: https://dobladov.github.io
