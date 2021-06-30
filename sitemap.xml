@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://dobladov.github.io/blog/crawling-data-from-dynamically-generated sites/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://dobladov.github.io/blog/how-to-configure-a-4k-screen-in-linux/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://dobladov.github.io/blog/writing-browser-extensions-without-compiling/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://dobladov.github.io/blog/automatically-deploy-to-GitHub-Pages-using-Actions/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://dobladov.github.io/blog/how-to-configure-a-4k-screen-in-linux/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://dobladov.github.io/tags/4k</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://dobladov.github.io/tags/GitHub</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://dobladov.github.io/tags/KDE</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
