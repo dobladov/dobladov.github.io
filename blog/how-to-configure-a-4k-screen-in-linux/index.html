@@ -108,10 +108,10 @@
 <p>My disappointment is immeasurable and my day is ruined. —Reviewbrah</p>
 </blockquote>
 <h2 id="why-is-this-problem-happening">Why is this problem happening?<a aria-hidden="true" tabindex="-1" href="#why-is-this-problem-happening"><span class="icon icon-link"></span></a></h2>
-<p>Apparently some screens might not give the correct <a href="https://en.wikipedia.org/wiki/Extended_Display_Identification_Data">EDID</a> information, in my case a <a href="https://www.samsung.com/us/business/support/owners/product/ue850-series-u28e850r/">SAMSUNG LU28E85KRS</a>, this makes impossible to select all supported modes for our screen, showing some default ones, without including resolutions greater than 1920x1080.</p>
+<p>Apparently some screens might not give the correct <a href="https://en.wikipedia.org/wiki/Extended_Display_Identification_Data" target="_blank" rel="nofollow">EDID</a> information, in my case a <a href="https://www.samsung.com/us/business/support/owners/product/ue850-series-u28e850r/" target="_blank" rel="nofollow">SAMSUNG LU28E85KRS</a>, this makes impossible to select all supported modes for our screen, showing some default ones, without including resolutions greater than 1920x1080.</p>
 <h2 id="how-to-get-the-correct-edid-and-set-it-using-xrandr">How to get the correct EDID and set it using xrandr<a aria-hidden="true" tabindex="-1" href="#how-to-get-the-correct-edid-and-set-it-using-xrandr"><span class="icon icon-link"></span></a></h2>
 <h3 id="getting-the-correct-edid">Getting the correct EDID<a aria-hidden="true" tabindex="-1" href="#getting-the-correct-edid"><span class="icon icon-link"></span></a></h3>
-<p>Thanks to this wonderful answer <a href="https://unix.stackexchange.com/a/323121">How to get EDID for a single monitor?</a> by <a href="https://unix.stackexchange.com/users/32896/malat">Malat</a>, obtaining the correct information is easy.</p>
+<p>Thanks to this wonderful answer <a href="https://unix.stackexchange.com/a/323121" target="_blank" rel="nofollow">How to get EDID for a single monitor?</a> by <a href="https://unix.stackexchange.com/users/32896/malat" target="_blank" rel="nofollow">Malat</a>, obtaining the correct information is easy.</p>
 <pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">sudo</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">apt</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">install</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">read-edid</span></span>
 <span class="line"><span style="color: #B392F0">sudo</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">get-edid</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">|</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">parse-edid</span></span></code></pre>
 <p>Cool, we get all supported modes.</p>
@@ -140,8 +140,8 @@
 <p>Don’t forget to set font DPI and screen scale to you taste.</p>
 <h2 id="useful-information">Useful information<a aria-hidden="true" tabindex="-1" href="#useful-information"><span class="icon icon-link"></span></a></h2>
 <ul>
-<li><a href="https://wiki.archlinux.org/index.php/Xrandr">Arch wiki xrandr</a></li>
-<li><a href="https://gist.github.com/datagrok/410d26e24ec51159cdfd2a400b809705">Automate setting the screen</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/Xrandr" target="_blank" rel="nofollow">Arch wiki xrandr</a></li>
+<li><a href="https://gist.github.com/datagrok/410d26e24ec51159cdfd2a400b809705" target="_blank" rel="nofollow">Automate setting the screen</a></li>
 </ul>
 
 
