@@ -76,7 +76,11 @@
                     7 min read — <time datetime="2020-02-07T00:00:00.000Z">
 	Feb 7, 2020
 </time>
-                    
+                    <div>
+                                Last updated — <time datetime="2023-08-13T00:00:00.000Z">
+	Aug 13, 2023
+</time>
+                            </div>
                 </div>
             </header>
             
@@ -210,12 +214,13 @@
 <p>To create this token go to <code>Settings</code> -&gt; <code>Developer settings</code> -&gt; <code>Personal access tokens</code> and create a new one.</p>
 <p>With this configuration, we can use a personal token that needs to be set on Settings -&gt; Secrets, since the <code>secrets.GITHUB_TOKEN</code> only allows you to commit to your current repository.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">- </span><span style="color:#85E89D">name</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">Deploy</span></span>
-<span class="line"><span style="color:#E1E4E8">      </span><span style="color:#85E89D">uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">peaceiris/actions-gh-pages@v2</span></span>
-<span class="line"><span style="color:#E1E4E8">      </span><span style="color:#85E89D">env</span><span style="color:#E1E4E8">:</span></span>
-<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">PERSONAL_TOKEN</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ secrets.PERSONAL_TOKEN }}</span></span>
-<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">EXTERNAL_REPOSITORY</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">dobladov/dobladov.github.io</span></span>
-<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">PUBLISH_BRANCH</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">master</span></span>
-<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">PUBLISH_DIR</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">./public</span></span></code></pre>
+<span class="line"><span style="color:#E1E4E8">      </span><span style="color:#85E89D">uses</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">peaceiris/actions-gh-pages@v3</span></span>
+<span class="line"><span style="color:#E1E4E8">      </span><span style="color:#85E89D">with</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">personal_token</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">${{ secrets.PERSONAL_TOKEN }}</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">external_repository</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">dobladov/dobladov.github.io</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">publish_branch</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">master</span></span>
+<span class="line"><span style="color:#E1E4E8">        </span><span style="color:#85E89D">publish_dir</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">./dist</span></span>
+<span class="line"></span></code></pre>
 <h3 id="testing-multiple-platforms">Testing multiple platforms<a aria-hidden="true" tabindex="-1" href="#testing-multiple-platforms"><span class="icon icon-link"></span></a></h3>
 <p>Different platforms might use different commands.</p>
 <p>For example let’s say there’s a <code>rm</code> in the scripts of the package.js while this build should work on MacOS and Linux, unfortunately it will fail on Windows since the <code>rm</code> command is not available, with a multiple platform test we will realize that using a solution like <code>rimraf</code> instead of <code>rm</code> will solve the problem for Windows.</p>
@@ -260,11 +265,17 @@
                 <div id="metadata">
 
                     <div class="metaSection">
-                        <span class="title">Date</span>
+                        <span class="title">Published</span>
                         <time datetime="2020-02-07T00:00:00.000Z">
 	Feb 7, 2020
 </time>
                     </div>
+                    <div class="metaSection">
+                            <span class="title">Updated</span>
+                            <time datetime="2023-08-13T00:00:00.000Z">
+	Aug 13, 2023
+</time>
+                        </div>
                     
                     <div class="metaSection">
                         <span class="title">Length</span>
@@ -288,7 +299,7 @@
                         <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/automatically-deploy-to-GitHub-Pages-using-Actions/index.mdx">Did I make a mistake? Please consider sending a pull request</a>
                     </div>
 
-                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Automatically deploy to GitHub Pages using Actions","editor":"Daniel Doblado","genre":"GitHub devops production gh-pages","keywords":"GitHub devops production gh-pages","wordcount":1322,"url":"https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/","datePublished":"2020-02-07T00:00:00.000Z","dateCreated":"2020-02-07T00:00:00.000Z","description":"How to automate your workflows increasing your productivity and reducing manual errors.","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Automatically deploy to GitHub Pages using Actions","editor":"Daniel Doblado","genre":"GitHub devops production gh-pages","keywords":"GitHub devops production gh-pages","wordcount":1322,"url":"https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/","datePublished":"2020-02-07T00:00:00.000Z","dateCreated":"2020-02-07T00:00:00.000Z","dateModified":"2023-08-13T00:00:00.000Z","description":"How to automate your workflows increasing your productivity and reducing manual errors.","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
                 </div>
             </details>
         <div class="progress"></div>
