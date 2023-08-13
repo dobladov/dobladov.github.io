@@ -2,6 +2,6 @@ User-agent: ia_archiver
 Disallow: /
 
 User-agent: *
-Disallow: /resume
-Sitemap: https://dobladov.github.io/sitemap.xml
-Host: https://dobladov.github.io
+Sitemap: https://dobla.do/sitemap.xml
+Host: https://dobla.do
+    

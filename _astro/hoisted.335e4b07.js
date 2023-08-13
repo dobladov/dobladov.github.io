@@ -1,0 +1,1 @@
+import"./hoisted.d52944d0.js";const c=document.querySelectorAll("#title, h2, #metadata"),o=new IntersectionObserver(e=>{const i=[...document.querySelectorAll("aside a")];e.forEach(t=>{const s=i.find(r=>r.href.endsWith(`#${t.target.id}`));t.isIntersecting?s?.classList.add("active"):s?.classList.remove("active")})},{threshold:.9});c.forEach(e=>{o.observe(e)});
