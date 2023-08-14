@@ -88,6 +88,10 @@
                         </li>
                         <li>
                                 <a href="#complexity-is-the-enemy">Complexity is the enemy</a>
+                            </li><li>
+                                <a href="#coming-with-simpler-solutions">Coming with simpler solutions</a>
+                            </li><li>
+                                <a href="#how-it-ended">How it ended</a>
                             </li>
                         <li>
                             <a id="metadataLink" title="Navigate to the end of the article" href="#metadata">Metadata</a>
@@ -106,7 +110,7 @@
 <p>I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making it longer to fix simple stuff like bugs.</p>
 <p>So in order to build trust and avoid wasting reviewer’s time, all the code needed to stay just as it was written.</p>
 <p>Tools like <a href="https://www.snowpack.dev/" target="_blank" rel="nofollow">snowpack</a> made me realize that with the advance of JavaScript modules, we might not need to compile what it’s an interpreted language, seriously how did we reach this point.</p>
-<h3 id="coming-with-simpler-solutions">Coming with simpler solutions<a aria-hidden="true" tabindex="-1" href="#coming-with-simpler-solutions"><span class="icon icon-link"></span></a></h3>
+<h2 id="coming-with-simpler-solutions">Coming with simpler solutions<a aria-hidden="true" tabindex="-1" href="#coming-with-simpler-solutions"><span class="icon icon-link"></span></a></h2>
 <p>Let’s look at the requirements, I wanted to use components, separate my logic from styles, use declarative logic, not set up any bundler (webpack, parcel, etc…) for this React would not make the cut since JSX needs some tooling and care.</p>
 <p>So the decision went to <a href="https://skruv.io/" target="_blank" rel="nofollow">Skruv</a>, this framework is amazing, not only is tiny, modular and simple to learn, the docs are amazing well organized and clear, covering all functionality without extras.</p>
 <p>You can tell how nice the framework is by looking at this framework’s goals:</p>
@@ -137,7 +141,7 @@
 <span class="line"><span style="color: #E1E4E8">)</span></span></code></pre>
 <p>On top of those advantages, I love the nested syntax, far shorter than JSX, now that I think about it feels weird that we moved to write HTML in JS.</p>
 <p>You might be also wondering, “what if I need typescript, do you have to transpile?” the answer is no, you can use <a href="https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html" target="_blank" rel="nofollow">JSDocs with Typescript</a> without having to create a single <code>ts</code> file.</p>
-<h3 id="how-it-ended">How it ended<a aria-hidden="true" tabindex="-1" href="#how-it-ended"><span class="icon icon-link"></span></a></h3>
+<h2 id="how-it-ended">How it ended<a aria-hidden="true" tabindex="-1" href="#how-it-ended"><span class="icon icon-link"></span></a></h2>
 <p>I feel this change was a success, new code can be iterated easily without having to worry much about state or building, since the extension runs on modern browsers I don’t have to care about babel, etc</p>
 <p>Right now the only concern I have about the extension is <em>manifest v3</em> which is not supported in Firefox yet, but this is a story for another post.</p>
 <p>I have to say that I’m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I’ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes me want to keep contributing free, anti-traking open-source code.</p>
