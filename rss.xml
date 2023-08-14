@@ -15,11 +15,11 @@
 &lt;h3&gt;Automated testing&lt;/h3&gt;
 &lt;p&gt;Before each build tests can be enforce to avoid putting code on production that might contain errors or not follow the code style guide.&lt;/p&gt;
 &lt;h3&gt;No more manual tasks&lt;/h3&gt;
-&lt;p&gt;This is clear, automating a process is always faster and in general less error prone than putting your code manually in production on a Friday before vacations :tada:.&lt;/p&gt;
+&lt;p&gt;This is clear, automating a process is always faster and in general less error prone than putting your code manually in production on a Friday before vacations.&lt;/p&gt;
 &lt;h3&gt;Multi-platform&lt;/h3&gt;
 &lt;p&gt;Multiple platforms can be tested while doing the deployment without the need of the developers of installing virtual machines.&lt;/p&gt;
 &lt;h3&gt;Cost&lt;/h3&gt;
-&lt;p&gt;Manual deployment will cost you at the very least time :watch:, GitHub actions are for free both in price and your time, why not use them?&lt;/p&gt;
+&lt;p&gt;Manual deployment will cost you at the very least time, GitHub actions are for free both in price and your time, why not use them?&lt;/p&gt;
 &lt;h2&gt;Creating a new Action&lt;/h2&gt;
 &lt;p&gt;Choose a repository, go to Actions and add new one.&lt;/p&gt;
 &lt;p&gt;We need to create a new file, in this case is called &lt;code&gt;deploy.yml&lt;/code&gt;, here we will define the process for the deployment, make sure to &lt;strong&gt;never put any secrets in here&lt;/strong&gt; since it will be committed to the repository.&lt;/p&gt;
@@ -138,7 +138,7 @@ jobs:
     - cron:  &apos;0 * * * *&apos;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Not only for deployments&lt;/h3&gt;
-&lt;p&gt;Actions can be used for creating new release packages, also notifications, emails can be send on each event, the limit is your :rainbow: imagination :rainbow:.&lt;/p&gt;
+&lt;p&gt;Actions can be used for creating new release packages, also notifications, emails can be send on each event, the limit is your imagination.&lt;/p&gt;
 &lt;h3&gt;Disadvantages&lt;/h3&gt;
 &lt;p&gt;One of the main disadvantages, is that like any other service if is down you will not be able of deploying using these workflows, It does not limit you to still do manual deployments for your application.&lt;/p&gt;
 &lt;p&gt;If you wonder why your perfectly working action does not work don&apos;t forget to check: https://status.github.com/&lt;/p&gt;
@@ -325,7 +325,7 @@ The display has two ribbons that each control half of the screen, I had to fix b
 &lt;p&gt;My disappointment is immeasurable and my day is ruined. --Reviewbrah&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2&gt;Why is this problem happening?&lt;/h2&gt;
-&lt;p&gt;Apparently some screens might not give the correct &lt;a href=&quot;https://en.wikipedia.org/wiki/Extended_Display_Identification_Data&quot;&gt;EDID&lt;/a&gt; information, in my case a &lt;a href=&quot;https://www.samsung.com/us/business/support/owners/product/ue850-series-u28e850r/&quot;&gt;SAMSUNG LU28E85KRS&lt;/a&gt;, this makes impossible to select all supported modes for our screen, showing some default ones, without including resolutions greater than 1920x1080.&lt;/p&gt;
+&lt;p&gt;Apparently some screens might not give the correct &lt;a href=&quot;https://en.wikipedia.org/wiki/Extended_Display_Identification_Data&quot;&gt;EDID&lt;/a&gt; information, in my case a &lt;a href=&quot;https://www.samsung.com/us/business/support/owners/product/ue850-series-u28e850r/&quot;&gt;SAMSUNG LU28E85KRS&lt;/a&gt;, this makes it impossible to select all supported modes for our screen, showing some default ones, without including resolutions greater than 1920x1080.&lt;/p&gt;
 &lt;h2&gt;How to get the correct EDID and set it using xrandr&lt;/h2&gt;
 &lt;h3&gt;Getting the correct EDID&lt;/h3&gt;
 &lt;p&gt;Thanks to this wonderful answer &lt;a href=&quot;https://unix.stackexchange.com/a/323121&quot;&gt;How to get EDID for a single monitor?&lt;/a&gt; by &lt;a href=&quot;https://unix.stackexchange.com/users/32896/malat&quot;&gt;Malat&lt;/a&gt;, obtaining the correct information is easy.&lt;/p&gt;
@@ -351,10 +351,10 @@ Modeline    &quot;Mode 12&quot; 241.50 2560 2608 2640 2720 1440 1443 1448 1481 +
 &lt;p&gt;The first value after the mode number tell us the horizontal resolution, in my case I&apos;m interested in &lt;code&gt;Mode 0&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Modeline    &quot;Mode 0&quot; 297.00 3840 4016 4104 4400 2160 2168 2178 2250 +hsync +vsync 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Let&apos;s create a new mode, we can name it anything we want but I prefer to name if after the output resolution.&lt;/p&gt;
+&lt;p&gt;Let&apos;s create a new mode, we can name it anything we want, but I prefer to name it after the output resolution.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xrandr --newmode &quot;3840x2160&quot; 297.00 3840 4016 4104 4400 2160 2168 2178 2250 +hsync +
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now we add the mode to the outut, if you are not sure which one is the output, run &lt;code&gt;xrandr&lt;/code&gt; and it will show something like &lt;code&gt;HDMI-2 connected&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Now we add the mode to the output, if you are not sure which one is the output, run &lt;code&gt;xrandr&lt;/code&gt; and it will show something like &lt;code&gt;HDMI-2 connected&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;We use the name of the output.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xrandr --addmode HDMI-2 3840x2160
 &lt;/code&gt;&lt;/pre&gt;
@@ -365,12 +365,12 @@ Modeline    &quot;Mode 12&quot; 241.50 2560 2608 2640 2720 1440 1443 1448 1481 +
 &lt;li&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Xrandr&quot;&gt;Arch wiki xrandr&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://gist.github.com/datagrok/410d26e24ec51159cdfd2a400b809705&quot;&gt;Automate setting the screen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>Writing browser extensions without compiling</title><link>https://dobla.do/blog/writing-browser-extensions-without-compiling/</link><guid isPermaLink="true">https://dobla.do/blog/writing-browser-extensions-without-compiling/</guid><description>Positive changes for one of my extensions with the goal of making better extensions.</description><pubDate>Thu, 24 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Complexity is the enemy&lt;/h2&gt;
-&lt;p&gt;Recently one of my most popular &lt;a href=&quot;https://github.com/dobladov/youtube2Anki&quot;&gt;extensions&lt;/a&gt; received a full refactor, previously it was made with just pure JavaScript, this was fine since at the beginning it was a proof of concept, it means no complex bundles, frameworks, compilers, ...&lt;/p&gt;
+</content:encoded></item><item><title>Writing browser extensions without compiling</title><link>https://dobla.do/blog/writing-browser-extensions-without-compiling/</link><guid isPermaLink="true">https://dobla.do/blog/writing-browser-extensions-without-compiling/</guid><description>Positive development changes for one of my extensions.</description><pubDate>Thu, 24 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Complexity is the enemy&lt;/h2&gt;
+&lt;p&gt;Recently one of my most popular &lt;a href=&quot;https://github.com/dobladov/youtube2Anki&quot;&gt;extensions&lt;/a&gt; received a full refactor, previously it was made with just pure JavaScript; this was fine since at the beginning it was a proof of concept, it means no complex bundles, frameworks, compilers, ...&lt;/p&gt;
 &lt;p&gt;But with complexity comes necessity, managing the state of the connection between the extension and Anki and editing the sentences got complicated using imperative logic; It&apos;s amazing how used I became to declarative logic with &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; and this is something that I was missing for this extension.&lt;/p&gt;
-&lt;p&gt;I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making longer to fix simple stuff like bugs.&lt;/p&gt;
-&lt;p&gt;So in order to give trust and avoid wasting time in reviews, all the code needed to stay just as it was written.&lt;/p&gt;
-&lt;p&gt;Tools like &lt;a href=&quot;https://www.snowpack.dev/&quot;&gt;snowpack&lt;/a&gt; made me realize that with the advance of JavaScript modules we might not need to compile what it&apos;s an interpreted language, like seriously how did we reach this point.&lt;/p&gt;
+&lt;p&gt;I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making it longer to fix simple stuff like bugs.&lt;/p&gt;
+&lt;p&gt;So in order to build trust and avoid wasting reviewer&apos;s time, all the code needed to stay just as it was written.&lt;/p&gt;
+&lt;p&gt;Tools like &lt;a href=&quot;https://www.snowpack.dev/&quot;&gt;snowpack&lt;/a&gt; made me realize that with the advance of JavaScript modules, we might not need to compile what it&apos;s an interpreted language, seriously how did we reach this point.&lt;/p&gt;
 &lt;h3&gt;Coming with simpler solutions&lt;/h3&gt;
 &lt;p&gt;Let&apos;s look at the requirements, I wanted to use components, separate my logic from styles, use declarative logic, not set up any bundler (webpack, parcel, etc...) for this React would not make the cut since JSX needs some tooling and care.&lt;/p&gt;
 &lt;p&gt;So the decision went to &lt;a href=&quot;https://skruv.io/&quot;&gt;Skruv&lt;/a&gt;, this framework is amazing, not only is tiny, modular and simple to learn, the docs are amazing well organized and clear, covering all functionality without extras.&lt;/p&gt;
@@ -385,8 +385,8 @@ Modeline    &quot;Mode 12&quot; 241.50 2560 2608 2640 2720 1440 1443 1448 1481 +
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Useable without bundling/compilation/transpilation&lt;/li&gt;
-&lt;li&gt;Fast enough for most normal use cases: benchmark&lt;/li&gt;
-&lt;li&gt;Supports async components like import() and async generators&lt;/li&gt;
+&lt;li&gt;Fast enough for most normal use cases: &lt;a href=&quot;https://krausest.github.io/js-framework-benchmark/2023/table_chrome_116.0.5845.82.html&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Supports async components like &lt;code&gt;import()&lt;/code&gt; and &lt;code&gt;async&lt;/code&gt; generators&lt;/li&gt;
 &lt;li&gt;CSS scoping via shadow DOM&lt;/li&gt;
 &lt;li&gt;Hopefully grokable/understandable code&lt;/li&gt;
 &lt;/ul&gt;
@@ -396,7 +396,7 @@ import { renderNode } from  &apos;./skruv/vDOM.js&apos;
 
 let root = document.querySelector(&apos;#root&apos;)
 
-root =  renderNode(
+root = renderNode(
 	div({}, &apos;Hello world!&apos;),
 	root
 )
@@ -405,6 +405,6 @@ root =  renderNode(
 &lt;p&gt;You might be also wondering, &quot;what if I need typescript, do you have to transpile?&quot; the answer is no, you can use &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html&quot;&gt;JSDocs with Typescript&lt;/a&gt; without having to create a single &lt;code&gt;ts&lt;/code&gt; file.&lt;/p&gt;
 &lt;h3&gt;How it ended&lt;/h3&gt;
 &lt;p&gt;I feel this change was a success, new code can be iterated easily without having to worry much about state or building, since the extension runs on modern browsers I don&apos;t have to care about babel, etc&lt;/p&gt;
-&lt;p&gt;Right now the only concern I have about the extension is manifest v3 which is not supported in Firefox yet, but this is a story for another post.&lt;/p&gt;
-&lt;p&gt;I have to say that I&apos;m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I&apos;ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes want to keep contributing free, anti-traking open-source code.&lt;/p&gt;
+&lt;p&gt;Right now the only concern I have about the extension is &lt;em&gt;manifest v3&lt;/em&gt; which is not supported in Firefox yet, but this is a story for another post.&lt;/p&gt;
+&lt;p&gt;I have to say that I&apos;m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I&apos;ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes me want to keep contributing free, anti-traking open-source code.&lt;/p&gt;
 </content:encoded></item></channel></rss>

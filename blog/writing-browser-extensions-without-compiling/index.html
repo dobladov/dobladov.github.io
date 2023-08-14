@@ -15,20 +15,20 @@
 <!-- Primary Meta Tags -->
 <title>Writing browser extensions without compiling - Daniel Doblado</title>
 <meta name="title" content="Writing browser extensions without compiling">
-<meta name="description" content="Positive changes for one of my extensions with the goal of making better extensions.">
+<meta name="description" content="Positive development changes for one of my extensions.">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dobla.do/blog/writing-browser-extensions-without-compiling/">
 <meta property="og:title" content="Writing browser extensions without compiling">
-<meta property="og:description" content="Positive changes for one of my extensions with the goal of making better extensions.">
+<meta property="og:description" content="Positive development changes for one of my extensions.">
 <!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://dobla.do/blog/writing-browser-extensions-without-compiling/">
 <meta property="twitter:title" content="Writing browser extensions without compiling">
-<meta property="twitter:description" content="Positive changes for one of my extensions with the goal of making better extensions.">
+<meta property="twitter:description" content="Positive development changes for one of my extensions.">
 <!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
     <link rel="stylesheet" href="/_astro/_...slug_.95223ae8.css" />
 <link rel="stylesheet" href="/_astro/_...slug_.dddb19c2.css" /><script type="module" src="/_astro/hoisted.335e4b07.js"></script></head>
@@ -95,16 +95,16 @@
                 </aside>
 
             <p class="description">
-                Positive changes for one of my extensions with the goal of making better extensions.
+                Positive development changes for one of my extensions.
             </p>
             
             
 	<h2 id="complexity-is-the-enemy">Complexity is the enemy<a aria-hidden="true" tabindex="-1" href="#complexity-is-the-enemy"><span class="icon icon-link"></span></a></h2>
-<p>Recently one of my most popular <a href="https://github.com/dobladov/youtube2Anki" target="_blank" rel="nofollow">extensions</a> received a full refactor, previously it was made with just pure JavaScript, this was fine since at the beginning it was a proof of concept, it means no complex bundles, frameworks, compilers, …</p>
+<p>Recently one of my most popular <a href="https://github.com/dobladov/youtube2Anki" target="_blank" rel="nofollow">extensions</a> received a full refactor, previously it was made with just pure JavaScript; this was fine since at the beginning it was a proof of concept, it means no complex bundles, frameworks, compilers, …</p>
 <p>But with complexity comes necessity, managing the state of the connection between the extension and Anki and editing the sentences got complicated using imperative logic; It’s amazing how used I became to declarative logic with <a href="https://reactjs.org/" target="_blank" rel="nofollow">React</a> and this is something that I was missing for this extension.</p>
-<p>I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making longer to fix simple stuff like bugs.</p>
-<p>So in order to give trust and avoid wasting time in reviews, all the code needed to stay just as it was written.</p>
-<p>Tools like <a href="https://www.snowpack.dev/" target="_blank" rel="nofollow">snowpack</a> made me realize that with the advance of JavaScript modules we might not need to compile what it’s an interpreted language, like seriously how did we reach this point.</p>
+<p>I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making it longer to fix simple stuff like bugs.</p>
+<p>So in order to build trust and avoid wasting reviewer’s time, all the code needed to stay just as it was written.</p>
+<p>Tools like <a href="https://www.snowpack.dev/" target="_blank" rel="nofollow">snowpack</a> made me realize that with the advance of JavaScript modules, we might not need to compile what it’s an interpreted language, seriously how did we reach this point.</p>
 <h3 id="coming-with-simpler-solutions">Coming with simpler solutions<a aria-hidden="true" tabindex="-1" href="#coming-with-simpler-solutions"><span class="icon icon-link"></span></a></h3>
 <p>Let’s look at the requirements, I wanted to use components, separate my logic from styles, use declarative logic, not set up any bundler (webpack, parcel, etc…) for this React would not make the cut since JSX needs some tooling and care.</p>
 <p>So the decision went to <a href="https://skruv.io/" target="_blank" rel="nofollow">Skruv</a>, this framework is amazing, not only is tiny, modular and simple to learn, the docs are amazing well organized and clear, covering all functionality without extras.</p>
@@ -119,8 +119,8 @@
 </ul>
 </li>
 <li>Useable without bundling/compilation/transpilation</li>
-<li>Fast enough for most normal use cases: benchmark</li>
-<li>Supports async components like import() and async generators</li>
+<li>Fast enough for most normal use cases: <a href="https://krausest.github.io/js-framework-benchmark/2023/table_chrome_116.0.5845.82.html" target="_blank" rel="nofollow">benchmark</a></li>
+<li>Supports async components like <code>import()</code> and <code>async</code> generators</li>
 <li>CSS scoping via shadow DOM</li>
 <li>Hopefully grokable/understandable code</li>
 </ul>
@@ -130,7 +130,7 @@
 <span class="line"></span>
 <span class="line"><span style="color: #F97583">let</span><span style="color: #E1E4E8"> root </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> document.</span><span style="color: #B392F0">querySelector</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">'#root'</span><span style="color: #E1E4E8">)</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #E1E4E8">root </span><span style="color: #F97583">=</span><span style="color: #E1E4E8">  </span><span style="color: #B392F0">renderNode</span><span style="color: #E1E4E8">(</span></span>
+<span class="line"><span style="color: #E1E4E8">root </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">renderNode</span><span style="color: #E1E4E8">(</span></span>
 <span class="line"><span style="color: #E1E4E8">	</span><span style="color: #B392F0">div</span><span style="color: #E1E4E8">({}, </span><span style="color: #9ECBFF">'Hello world!'</span><span style="color: #E1E4E8">),</span></span>
 <span class="line"><span style="color: #E1E4E8">	root</span></span>
 <span class="line"><span style="color: #E1E4E8">)</span></span></code></pre>
@@ -138,8 +138,8 @@
 <p>You might be also wondering, “what if I need typescript, do you have to transpile?” the answer is no, you can use <a href="https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html" target="_blank" rel="nofollow">JSDocs with Typescript</a> without having to create a single <code>ts</code> file.</p>
 <h3 id="how-it-ended">How it ended<a aria-hidden="true" tabindex="-1" href="#how-it-ended"><span class="icon icon-link"></span></a></h3>
 <p>I feel this change was a success, new code can be iterated easily without having to worry much about state or building, since the extension runs on modern browsers I don’t have to care about babel, etc</p>
-<p>Right now the only concern I have about the extension is manifest v3 which is not supported in Firefox yet, but this is a story for another post.</p>
-<p>I have to say that I’m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I’ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes want to keep contributing free, anti-traking open-source code.</p>
+<p>Right now the only concern I have about the extension is <em>manifest v3</em> which is not supported in Firefox yet, but this is a story for another post.</p>
+<p>I have to say that I’m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I’ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes me want to keep contributing free, anti-traking open-source code.</p>
 
 
             <!-- <Share title={title} description={description} url={href} /> -->
@@ -178,7 +178,7 @@
                         <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/writing-browser-extensions-without-compiling.md">Did I make a mistake? Please consider sending a pull request</a>
                     </div>
 
-                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Writing browser extensions without compiling","editor":"Daniel Doblado","genre":"javascript extension tooling framework","keywords":"javascript extension tooling framework","wordcount":643,"url":"https://dobla.do/blog/writing-browser-extensions-without-compiling/","datePublished":"2021-06-24T00:00:00.000Z","dateCreated":"2021-06-24T00:00:00.000Z","description":"Positive changes for one of my extensions with the goal of making better extensions.","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Writing browser extensions without compiling","editor":"Daniel Doblado","genre":"javascript extension tooling framework","keywords":"javascript extension tooling framework","wordcount":643,"url":"https://dobla.do/blog/writing-browser-extensions-without-compiling/","datePublished":"2021-06-24T00:00:00.000Z","dateCreated":"2021-06-24T00:00:00.000Z","description":"Positive development changes for one of my extensions.","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
                 </div>
             </details>
         <div class="progress"></div>
