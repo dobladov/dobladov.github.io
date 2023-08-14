@@ -306,13 +306,10 @@ module.exports = getData
 &lt;p&gt;&amp;lt;YoutubeVideo videoId=&quot;JNsmoBEO4nI&quot; videoTitle=&quot;Yamaha YPG / DGX LCD Screen Fix, Easy &amp;amp; Fast&quot; /&amp;gt;&lt;/p&gt;
 &lt;p&gt;This solution sounds great, low repair cost (only 2 foldback clips), without much risk besides open it, so I tried.&lt;/p&gt;
 &lt;p&gt;After removing around 100 screws (that was painful), the case can be removed and the board can be accesed.&lt;/p&gt;
-&lt;p&gt;{/* &amp;lt;!--  --&amp;gt; */}&lt;/p&gt;
 &lt;p&gt;Now that&apos;s open the process it&apos;s easy, after remvoving the ribbons and the 4 screws around the board, the main board will go out and the display can be accessed.
 The display has two ribbons that each control half of the screen, I had to fix both in my case, so this requires to remove 2 additional screws to acces the second ribbon.&lt;/p&gt;
-&lt;p&gt;{/* &amp;lt;!--  --&amp;gt; */}&lt;/p&gt;
 &lt;p&gt;I isolated the clips with masking tape, to make sure the circuits will not short with the metalic clips.&lt;/p&gt;
 &lt;p&gt;After this I checked the screen and unfortunately it only fixed half of it, I tried adding more pressure, but nothing worked, so I gave up after a while.&lt;/p&gt;
-&lt;p&gt;{/* &amp;lt;!--  --&amp;gt; */}&lt;/p&gt;
 &lt;h2&gt;Second option&lt;/h2&gt;
 &lt;p&gt;At this poin I thought my only solution was to replace the screen, this was problematic for two reasons, number one, a new screen cost a minimum of &lt;a href=&quot;https://de.aliexpress.com/item/1005004712449602.html&quot;&gt;60€ on aliexprss&lt;/a&gt; sometimes as much as I paid for the whole piano, reson two is that it requires an iron solder.&lt;/p&gt;
 &lt;p&gt;I did want an excuse to buy a &lt;a href=&quot;https://pine64.com/product/pinecil-smart-mini-portable-soldering-iron/&quot;&gt;PINECIL&lt;/a&gt;, an amazing tool, but this will add to the cost, and I decided it was not worth it, besides the piano works great, and the MIDI input can be used without a screen.&lt;/p&gt;
