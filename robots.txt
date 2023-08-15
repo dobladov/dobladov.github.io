@@ -3,5 +3,3 @@ Disallow: /
 
 User-agent: *
 Sitemap: https://dobla.do/sitemap.xml
-Host: https://dobla.do
-    
