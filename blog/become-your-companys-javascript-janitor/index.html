@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-COLB5UPU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/orb512.png">
+<meta name="generator" content="Astro v2.10.1">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="RSS for Daniel Doblado" href="/rss.xml">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://dobla.do/blog/become-your-companys-javascript-janitor/">
+
+<!-- Primary Meta Tags -->
+<title>Become your company&#39;s JavaScript janitor - Daniel Doblado</title>
+<meta name="title" content="Become your company's JavaScript janitor">
+<meta name="description" content="How to keep your JavaScript dependencies up-to-date and learn new things in the process">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dobla.do/blog/become-your-companys-javascript-janitor/">
+<meta property="og:title" content="Become your company's JavaScript janitor">
+<meta property="og:description" content="How to keep your JavaScript dependencies up-to-date and learn new things in the process">
+<meta property="og:image" content="https://dobla.do/orb512.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://dobla.do/blog/become-your-companys-javascript-janitor/">
+<meta property="twitter:title" content="Become your company's JavaScript janitor">
+<meta property="twitter:description" content="How to keep your JavaScript dependencies up-to-date and learn new things in the process">
+<meta property="twitter:image" content="https://dobla.do/orb512.png">
+    <link rel="stylesheet" href="/_astro/_...slug_.95223ae8.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.dddb19c2.css" /><script type="module" src="/_astro/hoisted.335e4b07.js"></script></head>
+
+    
+
+    
+    
+    <body data-js="false" class="astro-COLB5UPU">
+        <a class="toArticle" href="#article">To the article</a>
+        
+
+<header class="astro-3EF6KSR2">
+	<nav class="astro-3EF6KSR2">
+		<h1 class="astro-3EF6KSR2">
+			<a href="/" class="astro-3EF6KSR2">Daniel Doblado</a>
+		</h1>
+		<div class="internalLinks astro-3EF6KSR2">
+			<a href="/blog" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Blog
+</a>
+			<a href="/projects" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Projects
+</a>
+			<a href="/tags" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Tags
+</a>
+			<a href="/rss.xml" class="astro-3EF6KSR2 astro-EIMMU3LG" title="RSS">
+	
+				<svg xml:space="preserve" viewBox="0 0 82.459 82.347" class="astro-3EF6KSR2" astro-icon="rss"><g transform="translate(-10.112 -9.668)"><circle cx="21.243" cy="80.884" r="11.131"/><path d="M18.229 40.126a7.626 7.626 0 1 0 0 15.253c15.917 0 28.865 12.95 28.865 28.865a7.626 7.626 0 0 0 7.628 7.627 7.627 7.627 0 0 0 7.627-7.627c0-24.326-19.793-44.118-44.12-44.118z"/><path d="M17.997 9.668a7.628 7.628 0 0 0 0 15.254c32.708.001 59.32 26.613 59.32 59.322a7.627 7.627 0 1 0 15.254 0c0-41.118-33.453-74.573-74.574-74.576z"/></g></svg>
+			
+</a>
+			<!-- <ThemeToggle /> -->
+		</div>
+	</nav>	
+</header>
+        <main class="astro-COLB5UPU">
+            <section class="astro-COLB5UPU">
+                
+    
+    <article id="article">
+        <header>
+                <h1 id="title">Become your company&#39;s JavaScript janitor</h1>
+                <div class="date">
+                    3 min read — <time datetime="2023-08-16T00:00:00.000Z">
+	Aug 16, 2023
+</time>
+                    
+                </div>
+            </header>
+            
+            <aside>
+                    <ul>
+                        <li>
+                            <a title="Navigate to the start of the article" href="#title">Start</a>
+                        </li>
+                        <li>
+                                <a href="#introduction">Introduction</a>
+                            </li><li>
+                                <a href="#basic-solutions-with-npm">Basic solutions with npm</a>
+                            </li><li>
+                                <a href="#a-better-way">A better way</a>
+                            </li><li>
+                                <a href="#workflow">Workflow</a>
+                            </li><li>
+                                <a href="#problems-with-alternatives">Problems with alternatives</a>
+                            </li><li>
+                                <a href="#conclusion">Conclusion</a>
+                            </li>
+                        <li>
+                            <a id="metadataLink" title="Navigate to the end of the article" href="#metadata">Metadata</a>
+                        </li>
+                    </ul>
+                </aside>
+
+            <p class="description">
+                How to keep your JavaScript dependencies up-to-date and learn new things in the process
+            </p>
+            
+            
+	<h2 id="introduction">Introduction<a aria-hidden="true" tabindex="-1" href="#introduction"><span class="icon icon-link"></span></a></h2>
+<p>How many times do you work on a project and many dependencies are outdated, and neither you nor your colleagues want to take care of them because it’s a huge tech debt task, especially with major versions?</p>
+<p>This might not happen if you take care of your dependencies regularly; even better, it can be an opportunity to improve your codebase and learn new things that new versions bring.</p>
+<h2 id="basic-solutions-with-npm">Basic solutions with npm<a aria-hidden="true" tabindex="-1" href="#basic-solutions-with-npm"><span class="icon icon-link"></span></a></h2>
+<p>The simplest way to see if there are new versions of your dependencies is to run <code>npm outdated</code>, this  command will show you the current version of your dependencies and the latest version available, pretty useful to get an overview.</p>
+<img src="/_astro/example-npm-outdated.36f09d7a.png" widht="1080" height="186"/>
+<p>From here we can do <code>npm update</code>, it will update all the dependencies to the latest version, but this is not always the best option because it can break your codebase, so you need to be careful, it’s much better to update packages one by one and check if everything is working as expected by running your tests, especially with major versions.</p>
+<p>Another task to do is to check how many vulnerabilities you have in your dependencies, easy to do by running <code>npm audit</code>, this will show you the vulnerabilities and the severity of outdated packages.</p>
+<p>And while this tools are good <em>npm-check</em> does a better job combining and improving them.</p>
+<h2 id="a-better-way">A better way<a aria-hidden="true" tabindex="-1" href="#a-better-way"><span class="icon icon-link"></span></a></h2>
+<p>There are some tools that can help you with this task, one of them is <a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="nofollow">npm-check</a>.</p>
+<p>The command <code>npx npm-check -u -E</code> will show an interactive list indicating the scope (<em>patch</em>, <em>minor</em>, <em>major</em>) of a newer version and a link to the changelog, so you can see what has changed and if it’s worth updating it.</p>
+<p>It makes incredibly easy to install each dependency once at a time to avoid breaking changes. My advice here is to always run the tests after installing any major version.</p>
+<img src="/_astro/example-npm-check.b0f7830f.png" widht="1282" height="202"/>
+<h2 id="workflow">Workflow<a aria-hidden="true" tabindex="-1" href="#workflow"><span class="icon icon-link"></span></a></h2>
+<p>For maintenance tasks, I like to reserve some time on Fridays to do this kind of work, so I can end the week with a clean slate, and I can also use this time to learn new things.</p>
+<p>I usually go through all the new dependencies and read the changelog, if I see something interesting, I update it, or make notes for future improvements based on the new features.</p>
+<h2 id="problems-with-alternatives">Problems with alternatives<a aria-hidden="true" tabindex="-1" href="#problems-with-alternatives"><span class="icon icon-link"></span></a></h2>
+<p>In my opinion, Dependabot feels more like spam than a useful tool; it create’s a lot of PRs that are most often ignored,  creating a lot of noise in your repository while not helping you understand what’s going on with the new versions.</p>
+<h2 id="conclusion">Conclusion<a aria-hidden="true" tabindex="-1" href="#conclusion"><span class="icon icon-link"></span></a></h2>
+<p>Both your colleagues and future self will be thankful for your work on this task and the new knowledge you’ll gain.</p>
+<p>Take the time to appreciate and maintain the foundation that your projects are built upon.</p>
+
+
+            <!-- <Share title={title} description={description} url={href} /> -->
+
+            <details class="details">
+                <summary>Metadata</summary>
+                <div id="metadata">
+
+                    <div class="metaSection">
+                        <span class="title">Published</span>
+                        <time datetime="2023-08-16T00:00:00.000Z">
+	Aug 16, 2023
+</time>
+                    </div>
+                    
+                    
+                    <div class="metaSection">
+                        <span class="title">Length</span>
+                        <span>3 min read (474 words)</span>
+                    </div> 
+                    
+                   <div class="metaSection">
+                       <span class="title">License</span>
+                       <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                   </div>
+
+                    <div class="metaSection">
+                            <span class="title">Tags</span>
+                            
+                            <div class="tags">
+                                <a href="/tags/dependencies">#dependencies</a><a href="/tags/update">#update</a><a href="/tags/npm">#npm</a><a href="/tags/javascript">#javascript</a><a href="/tags/devops">#devops</a><a href="/tags/maintenance">#maintenance</a>
+                            </div>
+                        </div>
+    
+                    <div class="centered">
+                        <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/become-your-companys-javascript-janitor/index.mdx">Did I make a mistake? Please consider sending a pull request</a>
+                    </div>
+
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Become your company's JavaScript janitor","editor":"Daniel Doblado","genre":"dependencies update npm javascript devops maintenance","keywords":"dependencies update npm javascript devops maintenance","wordcount":474,"url":"https://dobla.do/blog/become-your-companys-javascript-janitor/","datePublished":"2023-08-16T00:00:00.000Z","dateCreated":"2023-08-16T00:00:00.000Z","description":"How to keep your JavaScript dependencies up-to-date and learn new things in the process","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                </div>
+            </details>
+        <div class="progress"></div>
+    </article>
+
+            </section>
+        </main>
+        <footer class="astro-SZ7XMLTE">
+	<a target="_blank" href="https://codepen.io/dobladov" class="astro-SZ7XMLTE">CodePen</a>
+	<a target="_blank" href="mailto:danieldoblado@gmail.com" class="astro-SZ7XMLTE">E-Mail</a>
+	<a target="_blank" href="https://github.com/dobladov" class="astro-SZ7XMLTE">GitHub</a>
+	<a target="_blank" href="https://stackoverflow.com/users/2498992/daniel-doblado" class="astro-SZ7XMLTE">StackOverflow</a>
+	<a target="_blank" href="https://mastodon.social/@danieldobla" class="astro-SZ7XMLTE">Mastodon</a>
+	<a target="_blank" href="https://x.com/danieldobla" class="astro-SZ7XMLTE">𝕏</a>
+</footer>
+    </body></html>
