@@ -414,6 +414,50 @@ Modeline    &quot;Mode 12&quot; 241.50 2560 2608 2640 2720 1440 1443 1448 1481 +
 &lt;li&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Xrandr&quot;&gt;Arch wiki xrandr&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://gist.github.com/datagrok/410d26e24ec51159cdfd2a400b809705&quot;&gt;Automate setting the screen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</content:encoded></item><item><title>Making the Orb</title><link>https://dobla.do/blog/making-the-orb/</link><guid isPermaLink="true">https://dobla.do/blog/making-the-orb/</guid><description>How the interactive orb in my site was made.</description><pubDate>Fri, 18 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import orbMeme from &apos;./orb-meme.jpg&apos;
+import YoutubeVideo from &apos;#astro/components/YoutubeVideo.astro&apos;;
+import orb from &apos;./orb.webm&apos;
+import noJsOrb from &apos;./orb-no-js.webm&apos;&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Inspired by sites  like &lt;a href=&quot;https://oimo.io/&quot;&gt;Oimo&lt;/a&gt; I wanted to have one interactive element, ideally something that doesn&apos;t get in the way and makes the main page standout while not being too resource intense.&lt;/p&gt;
+&lt;p&gt;I played with some other ideas like noise backgrounds, generating a map that constantly changes, &lt;a href=&quot;https://en.wikipedia.org/wiki/Rorschach_test&quot;&gt;Rorschach patterns&lt;/a&gt;, floating particles, but none of them looked good enough (I&apos;m not a designer) or felt more special than a background.&lt;/p&gt;
+&lt;p&gt;&amp;lt;video width=&quot;400&quot; autoplay loop style={{display: &quot;flex&quot;, margin: &quot;0 auto&quot;}}&amp;gt;
+&amp;lt;source src={orb} type=&quot;video/webm&quot; /&amp;gt;
+&amp;lt;/video&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;br/&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;Then I saw this wonderful video from &lt;a href=&quot;https://www.youtube.com/@BarneyCodes&quot;&gt;Barney Codes&lt;/a&gt; and I loved how the flow field looked; He did a wonderful explanation and re-creating it was a breeze, a channel totally worth subscribing.&lt;/p&gt;
+&lt;p&gt;&amp;lt;YoutubeVideo videoId=&quot;sZBfLgfsvSk&quot; videoTitle=&quot;Easy Perlin Noise Flow Fields&quot; /&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Tweaks&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://p5js.org/&quot;&gt;p5&lt;/a&gt; can be a bit of a heavy library and it&apos;s global nature makes it not ideal for a final implementation, I ported the code to be mostly vanilla &amp;lt;abbr title=&quot;JavaScript&quot;&amp;gt;js&amp;lt;/abbr&amp;gt; with the exception of the &lt;a href=&quot;https://github.com/josephg/noisejs&quot;&gt;perlin noise&lt;/a&gt;, the author of the library has a good article of how it works, &lt;a href=&quot;https://joeiddon.github.io/projects/javascript/perlin.html&quot;&gt;&quot;Creating perlin noise in JS&quot;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&amp;lt;p class=&quot;codepen&quot; data-height=&quot;300&quot; data-theme-id=&quot;dark&quot; data-default-tab=&quot;js,result&quot; data-slug-hash=&quot;dyQBGMG&quot; data-preview=&quot;true&quot; data-user=&quot;dobladov&quot; style=&quot;height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;&quot;&amp;gt;
+&amp;lt;span&amp;gt;See the Pen &amp;lt;a href=&quot;https://codepen.io/dobladov/pen/dyQBGMG&quot;&amp;gt;
+Flow Field with chromatic aberration&amp;lt;/a&amp;gt; by DobladoV (&amp;lt;a href=&quot;https://codepen.io/dobladov&quot;&amp;gt;@dobladov&amp;lt;/a&amp;gt;)
+on &amp;lt;a href=&quot;https://codepen.io&quot;&amp;gt;CodePen&amp;lt;/a&amp;gt;.&amp;lt;/span&amp;gt;
+&amp;lt;/p&amp;gt;
+&amp;lt;script async src=&quot;https://cpwebassets.codepen.io/assets/embed/ei.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/p&gt;
+&lt;p&gt;One of the ideas I had in mind for the site theme was using &lt;a href=&quot;https://en.wikipedia.org/wiki/Chromatic_aberration&quot;&gt;chromatic aberration&lt;/a&gt; for some elements, adding it to the flow field really makes it pop just by displacing the particles in red, green and blue; At this point it looked good, but it had some problems, making it such a huge background element requires many particles, this can be an intensive task so if I could make it smaller.&lt;/p&gt;
+&lt;h2&gt;Inspiration&lt;/h2&gt;
+&lt;p&gt;The idea of making it an orb was inspired by this &lt;a href=&quot;https://twitter.com/wiz_mud/status/1687956508531679232&quot;&gt;meme&lt;/a&gt; and his wonderful game &lt;a href=&quot;http://wiz.zone&quot;&gt;Wiz.Zone&lt;/a&gt;, I thought using the orb and including the flow field inside would look interesting, while reducing the number of particles needed, I&apos;m definitely pleased with the result.&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src={orbMeme.src} width={orbMeme.width} height={orbMeme.height} style={{width: &quot;27rem&quot;,
+display: &quot;flex&quot;,
+margin: &quot;0 auto&quot;,
+maxWidth: &quot;100%&quot;,
+left: 0,
+}}
+/&amp;gt;&lt;/p&gt;
+&lt;p&gt;I also decided to use a photo of my hand and use a dither filter using https://doodad.dev/dither-me-this, personally it would look better with more contrast, but for an initial version it looks good enough, the hand it&apos;s also divided in two different layers to make give the impression to be between the fingers.&lt;/p&gt;
+&lt;h2&gt;Final touches&lt;/h2&gt;
+&lt;p&gt;I added some other changes like turning the direction of the flow according to the mouse position, and some minor change that probably nobody will ever notice, to do the same using the device orientation on phones.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    window.addEventListener(&quot;deviceorientation&quot;, (event) =&amp;gt; {   
+        leftToRight = event.gamma;
+    }, true);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are some other minor changes like stacked shadows to make it look more like glass and a shine in the background.&lt;/p&gt;
+&lt;p&gt;As an Easter egg, I also made it show some basic animation if JavaScript it&apos;s disabled.&lt;/p&gt;
+&lt;p&gt;&amp;lt;video width=&quot;400&quot; autoplay loop style={{display: &quot;flex&quot;, margin: &quot;0 auto&quot;}}&amp;gt;
+&amp;lt;source src={noJsOrb} type=&quot;video/webm&quot; /&amp;gt;
+&amp;lt;/video&amp;gt;&lt;/p&gt;
 </content:encoded></item><item><title>Reading books on my phone</title><link>https://dobla.do/blog/reading-books-on-my-phone/</link><guid isPermaLink="true">https://dobla.do/blog/reading-books-on-my-phone/</guid><description>While physical books are great, I prefer reading on my phone</description><pubDate>Fri, 18 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;What started as a test has become a habit, my mentality used to be &quot;reading physical books is better than digital&quot;, because we like to follow the motto:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;reject modernity, 𝖊𝖒𝖇𝖗𝖆𝖈𝖊 𝖙𝖗𝖆𝖉𝖎𝖙𝖎𝖔𝖓&lt;/p&gt;

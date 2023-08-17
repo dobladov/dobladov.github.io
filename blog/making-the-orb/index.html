@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-COLB5UPU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/orb512.png">
+<meta name="generator" content="Astro v2.10.1">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="RSS for Daniel Doblado" href="/rss.xml">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://dobla.do/blog/making-the-orb/">
+
+<!-- Primary Meta Tags -->
+<title>Making the Orb - Daniel Doblado</title>
+<meta name="title" content="Making the Orb">
+<meta name="description" content="How the interactive orb in my site was made.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dobla.do/blog/making-the-orb/">
+<meta property="og:title" content="Making the Orb">
+<meta property="og:description" content="How the interactive orb in my site was made.">
+<meta property="og:image" content="https://dobla.do/orb512.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://dobla.do/blog/making-the-orb/">
+<meta property="twitter:title" content="Making the Orb">
+<meta property="twitter:description" content="How the interactive orb in my site was made.">
+<meta property="twitter:image" content="https://dobla.do/orb512.png">
+    <link rel="stylesheet" href="/_astro/_...slug_.95223ae8.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.dddb19c2.css" /><script type="module" src="/_astro/hoisted.335e4b07.js"></script><link rel="stylesheet" href="/_astro/YoutubeVideo.astro_astro_type_style_index_0_lang.74a0303e.css" /></head>
+
+    
+
+    
+    
+    <body data-js="false" class="astro-COLB5UPU">
+        <a class="toArticle" href="#article">To the article</a>
+        
+
+<header class="astro-3EF6KSR2">
+	<nav class="astro-3EF6KSR2">
+		<h1 class="astro-3EF6KSR2">
+			<a href="/" class="astro-3EF6KSR2">Daniel Doblado</a>
+		</h1>
+		<div class="internalLinks astro-3EF6KSR2">
+			<a href="/blog" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Blog
+</a>
+			<a href="/projects" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Projects
+</a>
+			<a href="/tags" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Tags
+</a>
+			<a href="/rss.xml" class="astro-3EF6KSR2 astro-EIMMU3LG" title="RSS">
+	
+				<svg xml:space="preserve" viewBox="0 0 82.459 82.347" class="astro-3EF6KSR2" astro-icon="rss"><g transform="translate(-10.112 -9.668)"><circle cx="21.243" cy="80.884" r="11.131"/><path d="M18.229 40.126a7.626 7.626 0 1 0 0 15.253c15.917 0 28.865 12.95 28.865 28.865a7.626 7.626 0 0 0 7.628 7.627 7.627 7.627 0 0 0 7.627-7.627c0-24.326-19.793-44.118-44.12-44.118z"/><path d="M17.997 9.668a7.628 7.628 0 0 0 0 15.254c32.708.001 59.32 26.613 59.32 59.322a7.627 7.627 0 1 0 15.254 0c0-41.118-33.453-74.573-74.574-74.576z"/></g></svg>
+			
+</a>
+			<!-- <ThemeToggle /> -->
+		</div>
+	</nav>	
+</header>
+        <main class="astro-COLB5UPU">
+            <section class="astro-COLB5UPU">
+                
+    
+    <article id="article">
+        <header>
+                <h1 id="title">Making the Orb</h1>
+                <div class="date">
+                    3 min read — <time datetime="2023-08-18T00:00:00.000Z">
+	Aug 18, 2023
+</time>
+                    
+                </div>
+            </header>
+            
+            <aside>
+                    <ul>
+                        <li>
+                            <a title="Navigate to the start of the article" href="#title">Start</a>
+                        </li>
+                        <li>
+                                <a href="#introduction">Introduction</a>
+                            </li><li>
+                                <a href="#implementation">Implementation</a>
+                            </li><li>
+                                <a href="#tweaks">Tweaks</a>
+                            </li><li>
+                                <a href="#inspiration">Inspiration</a>
+                            </li><li>
+                                <a href="#final-touches">Final touches</a>
+                            </li>
+                        <li>
+                            <a id="metadataLink" title="Navigate to the end of the article" href="#metadata">Metadata</a>
+                        </li>
+                    </ul>
+                </aside>
+
+            <p class="description">
+                How the interactive orb in my site was made.
+            </p>
+            
+            
+	<h2 id="introduction">Introduction<a aria-hidden="true" tabindex="-1" href="#introduction"><span class="icon icon-link"></span></a></h2>
+<p>Inspired by sites  like <a href="https://oimo.io/" target="_blank" rel="nofollow">Oimo</a> I wanted to have one interactive element, ideally something that doesn’t get in the way and makes the main page standout while not being too resource intense.</p>
+<p>I played with some other ideas like noise backgrounds, generating a map that constantly changes, <a href="https://en.wikipedia.org/wiki/Rorschach_test" target="_blank" rel="nofollow">Rorschach patterns</a>, floating particles, but none of them looked good enough (I’m not a designer) or felt more special than a background.</p>
+<video width="400" autoplay loop style="display:flex;margin:0 auto"><source src="/_astro/orb.f580f550.webm" type="video/webm"/></video>
+<br/>
+<h2 id="implementation">Implementation<a aria-hidden="true" tabindex="-1" href="#implementation"><span class="icon icon-link"></span></a></h2>
+<p>Then I saw this wonderful video from <a href="https://www.youtube.com/@BarneyCodes" target="_blank" rel="nofollow">Barney Codes</a> and I loved how the flow field looked; He did a wonderful explanation and re-creating it was a breeze, a channel totally worth subscribing.</p>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.4.0/lite-youtube.js"></script>
+
+
+
+
+<div class="youtubeVideo astro-NWZT3KG3">
+	<lite-youtube videoid="sZBfLgfsvSk" videotitle="Easy Perlin Noise Flow Fields" autoLoad="true" class="astro-NWZT3KG3">
+		<a class="lite-youtube-fallback astro-NWZT3KG3" href="https://www.youtube.com/watch?v=sZBfLgfsvSk">Watch on YouTube: Easy Perlin Noise Flow Fields</a>
+	</lite-youtube>
+</div>
+<h2 id="tweaks">Tweaks<a aria-hidden="true" tabindex="-1" href="#tweaks"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://p5js.org/" target="_blank" rel="nofollow">p5</a> can be a bit of a heavy library and it’s global nature makes it not ideal for a final implementation, I ported the code to be mostly vanilla <abbr title="JavaScript">js</abbr> with the exception of the <a href="https://github.com/josephg/noisejs" target="_blank" rel="nofollow">perlin noise</a>, the author of the library has a good article of how it works, <a href="https://joeiddon.github.io/projects/javascript/perlin.html" target="_blank" rel="nofollow">“Creating perlin noise in JS”</a>.</p>
+<p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="dyQBGMG" data-preview="true" data-user="dobladov" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/dobladov/pen/dyQBGMG">
+Flow Field with chromatic aberration</a> by DobladoV (<a href="https://codepen.io/dobladov">@dobladov</a>)
+on <a href="https://codepen.io">CodePen</a>.</span></p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+<p>One of the ideas I had in mind for the site theme was using <a href="https://en.wikipedia.org/wiki/Chromatic_aberration" target="_blank" rel="nofollow">chromatic aberration</a> for some elements, adding it to the flow field really makes it pop just by displacing the particles in red, green and blue; At this point it looked good, but it had some problems, making it such a huge background element requires many particles, this can be an intensive task so if I could make it smaller.</p>
+<h2 id="inspiration">Inspiration<a aria-hidden="true" tabindex="-1" href="#inspiration"><span class="icon icon-link"></span></a></h2>
+<p>The idea of making it an orb was inspired by this <a href="https://twitter.com/wiz_mud/status/1687956508531679232" target="_blank" rel="nofollow">meme</a> and his wonderful game <a href="http://wiz.zone" target="_blank" rel="nofollow">Wiz.Zone</a>, I thought using the orb and including the flow field inside would look interesting, while reducing the number of particles needed, I’m definitely pleased with the result.</p>
+<img src="/_astro/orb-meme.cbb25daf.jpg" width="1920" height="1920" style="width:27rem;display:flex;margin:0 auto;max-width:100%;left:0"/>
+<p>I also decided to use a photo of my hand and use a dither filter using <a href="https://doodad.dev/dither-me-this" target="_blank" rel="nofollow">https://doodad.dev/dither-me-this</a>, personally it would look better with more contrast, but for an initial version it looks good enough, the hand it’s also divided in two different layers to make give the impression to be between the fingers.</p>
+<h2 id="final-touches">Final touches<a aria-hidden="true" tabindex="-1" href="#final-touches"><span class="icon icon-link"></span></a></h2>
+<p>I added some other changes like turning the direction of the flow according to the mouse position, and some minor change that probably nobody will ever notice, to do the same using the device orientation on phones.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;overflow-x:auto" tabindex="0"><code><span class="line"><span style="color:#E1E4E8">    window.</span><span style="color:#B392F0">addEventListener</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">&quot;deviceorientation&quot;</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">event</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=&gt;</span><span style="color:#E1E4E8"> {   </span></span>
+<span class="line"><span style="color:#E1E4E8">        leftToRight </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> event.gamma;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span></code></pre>
+<p>There are some other minor changes like stacked shadows to make it look more like glass and a shine in the background.</p>
+<p>As an Easter egg, I also made it show some basic animation if JavaScript it’s disabled.</p>
+<video width="400" autoplay loop style="display:flex;margin:0 auto"><source src="/_astro/orb-no-js.2d26bb77.webm" type="video/webm"/></video>
+
+
+            <!-- <Share title={title} description={description} url={href} /> -->
+
+            <details class="details">
+                <summary>Metadata</summary>
+                <div id="metadata">
+
+                    <div class="metaSection">
+                        <span class="title">Published</span>
+                        <time datetime="2023-08-18T00:00:00.000Z">
+	Aug 18, 2023
+</time>
+                    </div>
+                    
+                    
+                    <div class="metaSection">
+                        <span class="title">Length</span>
+                        <span>3 min read (446 words)</span>
+                    </div> 
+                    
+                   <div class="metaSection">
+                       <span class="title">License</span>
+                       <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                   </div>
+
+                    <div class="metaSection">
+                            <span class="title">Tags</span>
+                            
+                            <div class="tags">
+                                <a href="/tags/javascript">#javascript</a><a href="/tags/logo">#logo</a><a href="/tags/orb">#orb</a><a href="/tags/p5">#p5</a><a href="/tags/animation">#animation</a><a href="/tags/flow field">#flow field</a><a href="/tags/chromatic-aberration">#chromatic-aberration</a><a href="/tags/noise">#noise</a><a href="/tags/dither">#dither</a>
+                            </div>
+                        </div>
+    
+                    <div class="centered">
+                        <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/making-the-orb/index.mdx">Did I make a mistake? Please consider sending a pull request</a>
+                    </div>
+
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Making the Orb","editor":"Daniel Doblado","genre":"javascript logo orb p5 animation flow field chromatic-aberration noise dither","keywords":"javascript logo orb p5 animation flow field chromatic-aberration noise dither","wordcount":446,"url":"https://dobla.do/blog/making-the-orb/","datePublished":"2023-08-18T00:00:00.000Z","dateCreated":"2023-08-18T00:00:00.000Z","description":"How the interactive orb in my site was made.","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                </div>
+            </details>
+        <div class="progress"></div>
+    </article>
+
+            </section>
+        </main>
+        <footer class="astro-SZ7XMLTE">
+	<a target="_blank" href="https://codepen.io/dobladov" class="astro-SZ7XMLTE">CodePen</a>
+	<a target="_blank" href="mailto:danieldoblado@gmail.com" class="astro-SZ7XMLTE">E-Mail</a>
+	<a target="_blank" href="https://github.com/dobladov" class="astro-SZ7XMLTE">GitHub</a>
+	<a target="_blank" href="https://stackoverflow.com/users/2498992/daniel-doblado" class="astro-SZ7XMLTE">StackOverflow</a>
+	<a target="_blank" href="https://mastodon.social/@danieldobla" class="astro-SZ7XMLTE">Mastodon</a>
+	<a target="_blank" href="https://x.com/danieldobla" class="astro-SZ7XMLTE">𝕏</a>
+</footer>
+    </body></html>
