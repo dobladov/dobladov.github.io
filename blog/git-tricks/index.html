@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-COLB5UPU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/orb512.png">
+<meta name="generator" content="Astro v2.10.1">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="RSS for Daniel Doblado" href="/rss.xml">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://dobla.do/blog/git-tricks/">
+
+<!-- Primary Meta Tags -->
+<title>Git tricks - Daniel Doblado</title>
+<meta name="title" content="Git tricks">
+<meta name="description" content="Some of my tweaks for using git more efficiently">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dobla.do/blog/git-tricks/">
+<meta property="og:title" content="Git tricks">
+<meta property="og:description" content="Some of my tweaks for using git more efficiently">
+<meta property="og:image" content="https://dobla.do/orb512.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://dobla.do/blog/git-tricks/">
+<meta property="twitter:title" content="Git tricks">
+<meta property="twitter:description" content="Some of my tweaks for using git more efficiently">
+<meta property="twitter:image" content="https://dobla.do/orb512.png">
+    <link rel="stylesheet" href="/_astro/_...slug_.95223ae8.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.dddb19c2.css" /><script type="module" src="/_astro/hoisted.335e4b07.js"></script></head>
+
+    
+
+    
+    
+    <body data-js="false" class="astro-COLB5UPU">
+        <a class="toArticle" href="#article">To the article</a>
+        
+
+<header class="astro-3EF6KSR2">
+	<nav class="astro-3EF6KSR2">
+		<h1 class="astro-3EF6KSR2">
+			<a href="/" class="astro-3EF6KSR2">Daniel Doblado</a>
+		</h1>
+		<div class="internalLinks astro-3EF6KSR2">
+			<a href="/blog" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Blog
+</a>
+			<a href="/projects" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Projects
+</a>
+			<a href="/tags" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Tags
+</a>
+			<a href="/rss.xml" class="astro-3EF6KSR2 astro-EIMMU3LG" title="RSS">
+	
+				<svg xml:space="preserve" viewBox="0 0 82.459 82.347" class="astro-3EF6KSR2" astro-icon="rss"><g transform="translate(-10.112 -9.668)"><circle cx="21.243" cy="80.884" r="11.131"/><path d="M18.229 40.126a7.626 7.626 0 1 0 0 15.253c15.917 0 28.865 12.95 28.865 28.865a7.626 7.626 0 0 0 7.628 7.627 7.627 7.627 0 0 0 7.627-7.627c0-24.326-19.793-44.118-44.12-44.118z"/><path d="M17.997 9.668a7.628 7.628 0 0 0 0 15.254c32.708.001 59.32 26.613 59.32 59.322a7.627 7.627 0 1 0 15.254 0c0-41.118-33.453-74.573-74.574-74.576z"/></g></svg>
+			
+</a>
+			<!-- <ThemeToggle /> -->
+		</div>
+	</nav>	
+</header>
+        <main class="astro-COLB5UPU">
+            <section class="astro-COLB5UPU">
+                
+    
+    <article id="article">
+        <header>
+                <h1 id="title">Git tricks</h1>
+                <div class="date">
+                    4 min read — <time datetime="2023-08-22T00:00:00.000Z">
+	Aug 22, 2023
+</time>
+                    
+                </div>
+            </header>
+            
+            <aside>
+                    <ul>
+                        <li>
+                            <a title="Navigate to the start of the article" href="#title">Start</a>
+                        </li>
+                        <li>
+                                <a href="#introduction">Introduction</a>
+                            </li><li>
+                                <a href="#zsh-git-aliases">ZSH git aliases</a>
+                            </li><li>
+                                <a href="#custom-aliases">Custom aliases</a>
+                            </li><li>
+                                <a href="#global-git-ignore">Global git ignore</a>
+                            </li><li>
+                                <a href="#zsh-theme">ZSH theme</a>
+                            </li><li>
+                                <a href="#gh-command">Gh command</a>
+                            </li>
+                        <li>
+                            <a id="metadataLink" title="Navigate to the end of the article" href="#metadata">Metadata</a>
+                        </li>
+                    </ul>
+                </aside>
+
+            <p class="description">
+                Some of my tweaks for using git more efficiently
+            </p>
+            
+            
+	<h2 id="introduction">Introduction<a aria-hidden="true" tabindex="-1" href="#introduction"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://git-scm.com/" target="_blank" rel="nofollow">Git</a> is one of my most used work tools, sharpening our tools helps us be more productive and save a lot of time. These are some of my tweaks to speed up my workflow when interacting with git.</p>
+<h2 id="zsh-git-aliases">ZSH git aliases<a aria-hidden="true" tabindex="-1" href="#zsh-git-aliases"><span class="icon icon-link"></span></a></h2>
+<p>One of the first things I do after setting up my laptop is to install <a href="https://www.zsh.org/" target="_blank" rel="nofollow">ZSH</a> and <a href="https://ohmyz.sh/" target="_blank" rel="nofollow">Oh My ZSH</a>.</p>
+<p>Their <a href="https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index" target="_blank" rel="nofollow">aliases</a> have become completely natural to me, and I can’t work without them.</p>
+<p>While the list looks a bit overwhelming, it’s actually very easy to remember them; most of the time it’s the initial letter or how you would pronounce them, for example <code>git checkout</code> becomes <code>gco</code>.</p>
+<p>After a few uses, they become natural, and you will find yourself using them without thinking about it.</p>
+<p>These are my most used shortcuts:</p>
+<ul>
+<li><code>git fetch</code> -> <code>gf</code></li>
+<li><code>git add</code> -> <code>ga</code></li>
+<li><code>git commit -m</code> -> <code>gcmsg</code></li>
+<li><code>git checkout</code> -> <code>gco</code></li>
+<li><code>git checkout -b</code> -> <code>gcb</code></li>
+<li><code>git merge</code> -> <code>gm</code></li>
+<li><code>git pull origin "$(git_current_branch)</code> -> <code>ggpull</code></li>
+<li><code>git push origin "$(git_current_branch)"</code> -> <code>ggpush</code></li>
+</ul>
+<p>Commands that include variables like <code>git_current_branch</code> same a huge amount of time and mental attention.</p>
+<h2 id="custom-aliases">Custom aliases<a aria-hidden="true" tabindex="-1" href="#custom-aliases"><span class="icon icon-link"></span></a></h2>
+<p>Switching between my latest edited branches is common, and this command helps me quickly visualize my modified branches in order.</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">alias</span><span style="color: #E1E4E8"> branchOrder</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">'git branch --sort=-committerdate'</span></span></code></pre>
+<p>Similar to the last command, it helps to switch branches in a quick way using <a href="https://github.com/junegunn/fzf" target="_blank" rel="nofollow">fuzzy finder</a>.</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">alias</span><span style="color: #E1E4E8"> gcoi</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">'git checkout $(git branch -a | fzf | xargs)'</span></span></code></pre>
+<p>For one of my projects, we include the PR number on the <a href="https://keepachangelog.com/" target="_blank" rel="nofollow">Changelog</a>, this command gives me the value without having to open the browser.</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">alias</span><span style="color: #E1E4E8"> lastPR</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">'gh pr list -s all --json number --jq ".|=sort_by(.number)|last|.n></span></span></code></pre>
+<h2 id="global-git-ignore">Global git ignore<a aria-hidden="true" tabindex="-1" href="#global-git-ignore"><span class="icon icon-link"></span></a></h2>
+<p>I like to keep a global gitignore file, this is useful for ignoring files that are not specific to a project, for example, IDE configuration files.</p>
+<p>Adding <code>devNotes*</code> is especially useful as it helps me to write notes about a project while being sure they won’t be pushed by accident to the repository.</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B392F0">nano</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">.gitignore_global</span></span>
+<span class="line"><span style="color: #B392F0">git</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">config</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">--global</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">core.excludesfile</span><span style="color: #E1E4E8"> </span><span style="color: #9ECBFF">~/.gitignore_globa</span></span></code></pre>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">.DS_Store</span></span>
+<span class="line"><span style="color: #E1E4E8">.vscode</span></span>
+<span class="line"><span style="color: #E1E4E8">devNotes</span><span style="color: #F97583">*</span></span>
+<span class="line"><span style="color: #E1E4E8">dev</span><span style="color: #F97583">-</span><span style="color: #E1E4E8">notes</span><span style="color: #F97583">*</span></span></code></pre>
+<h2 id="zsh-theme">ZSH theme<a aria-hidden="true" tabindex="-1" href="#zsh-theme"><span class="icon icon-link"></span></a></h2>
+<p>ZSH themes are very customizable, I like to keep it simple, my current one is basically the default one with a few tweaks, a simpler way to display the <strong>branch name</strong> on the left side and the <strong>SHA commit</strong> on the right,  content on the <code>RPROMPT</code> will be automatically hidden if the content goes over it.</p>
+<p>That information helps me understand what I’m working at a glance, avoiding the need to run <code>git status</code> or <code>git branch</code> to get that information.</p>
+<p><img alt="zsh-theme"  src="/_astro/theme.814bde46_1j4ptU.webp" width="830" height="116" loading="lazy" decoding="async"></p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">PROMPT</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">"%(?:%{</span><span style="color: #E1E4E8">$fg_bold</span><span style="color: #9ECBFF">[green]%}➜ :%{</span><span style="color: #E1E4E8">$fg_bold</span><span style="color: #9ECBFF">[red]%}➜ )"</span></span>
+<span class="line"><span style="color: #E1E4E8">PROMPT</span><span style="color: #F97583">+=</span><span style="color: #9ECBFF">' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'</span></span>
+<span class="line"><span style="color: #E1E4E8">RPROMPT</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">'%F{cyan}$(git_prompt_short_sha)%F{reset}'</span></span>
+<span class="line"><span style="color: #E1E4E8">ZSH_THEME_GIT_PROMPT_PREFIX</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">"%{</span><span style="color: #E1E4E8">$fg_bold</span><span style="color: #9ECBFF">[blue]%}(%{</span><span style="color: #E1E4E8">$fg</span><span style="color: #9ECBFF">[red]%}"</span></span>
+<span class="line"><span style="color: #E1E4E8">ZSH_THEME_GIT_PROMPT_SUFFIX</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">"%{</span><span style="color: #E1E4E8">$reset_color</span><span style="color: #9ECBFF">%} "</span></span>
+<span class="line"><span style="color: #E1E4E8">ZSH_THEME_GIT_PROMPT_DIRTY</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">"%{</span><span style="color: #E1E4E8">$fg</span><span style="color: #9ECBFF">[blue]%}) %{</span><span style="color: #E1E4E8">$fg</span><span style="color: #9ECBFF">[yellow]%}✗"</span></span>
+<span class="line"><span style="color: #E1E4E8">ZSH_THEME_GIT_PROMPT_CLEAN</span><span style="color: #F97583">=</span><span style="color: #9ECBFF">"%{</span><span style="color: #E1E4E8">$fg</span><span style="color: #9ECBFF">[blue]%})"</span></span></code></pre>
+<h2 id="gh-command">Gh command<a aria-hidden="true" tabindex="-1" href="#gh-command"><span class="icon icon-link"></span></a></h2>
+<p>This section is more suited to GitHub than git but since my workflow combines both, I think it’s worth mentioning.</p>
+<p>I use <a href="https://cli.github.com/" target="_blank" rel="nofollow">GitHub CLI</a> mostly for scripting, there are two very simple commands that save me a lot of time, <code>gh repo view -w</code> and <code>gh pr view -w</code>, they open the current repository or pull request in the browser.</p>
+<p>Another command that I like to execute is <code>gh run watch</code> to know when a workflow is finished, for example, when I’m running tests on a PR, it can be pipped to the command <code>say [message]</code> to get a notification when the workflow is finished.</p>
+<p>There’s more to this command, but these three options are really useful.</p>
+
+
+            <!-- <Share title={title} description={description} url={href} /> -->
+
+            <details class="details">
+                <summary>Metadata</summary>
+                <div id="metadata">
+
+                    <div class="metaSection">
+                        <span class="title">Published</span>
+                        <time datetime="2023-08-22T00:00:00.000Z">
+	Aug 22, 2023
+</time>
+                    </div>
+                    
+                    
+                    <div class="metaSection">
+                        <span class="title">Length</span>
+                        <span>4 min read (759 words)</span>
+                    </div> 
+                    
+                   <div class="metaSection">
+                       <span class="title">License</span>
+                       <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                   </div>
+
+                    <div class="metaSection">
+                            <span class="title">Tags</span>
+                            
+                            <div class="tags">
+                                <a href="/tags/git">#git</a><a href="/tags/productivity">#productivity</a><a href="/tags/tools">#tools</a><a href="/tags/zsh">#zsh</a><a href="/tags/oh-my-zsh">#oh-my-zsh</a><a href="/tags/gh">#gh</a><a href="/tags/github">#github</a><a href="/tags/gitignore">#gitignore</a><a href="/tags/gitconfig">#gitconfig</a><a href="/tags/git-aliases">#git-aliases</a>
+                            </div>
+                        </div>
+    
+                    <div class="centered">
+                        <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/git-tricks/index.md">Did I make a mistake? Please consider sending a pull request</a>
+                    </div>
+
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Git tricks","editor":"Daniel Doblado","genre":"git productivity tools zsh oh-my-zsh gh github gitignore gitconfig git-aliases","keywords":"git productivity tools zsh oh-my-zsh gh github gitignore gitconfig git-aliases","wordcount":759,"url":"https://dobla.do/blog/git-tricks/","datePublished":"2023-08-22T00:00:00.000Z","dateCreated":"2023-08-22T00:00:00.000Z","description":"Some of my tweaks for using git more efficiently","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                </div>
+            </details>
+        <div class="progress"></div>
+    </article>
+
+            </section>
+        </main>
+        <footer class="astro-SZ7XMLTE">
+	<a target="_blank" href="https://codepen.io/dobladov" class="astro-SZ7XMLTE">CodePen</a>
+	<a target="_blank" href="mailto:danieldoblado@gmail.com" class="astro-SZ7XMLTE">E-Mail</a>
+	<a target="_blank" href="https://github.com/dobladov" class="astro-SZ7XMLTE">GitHub</a>
+	<a target="_blank" href="https://stackoverflow.com/users/2498992/daniel-doblado" class="astro-SZ7XMLTE">StackOverflow</a>
+	<a target="_blank" href="https://mastodon.social/@danieldobla" class="astro-SZ7XMLTE">Mastodon</a>
+	<a target="_blank" href="https://x.com/danieldobla" class="astro-SZ7XMLTE">𝕏</a>
+</footer>
+    </body></html>

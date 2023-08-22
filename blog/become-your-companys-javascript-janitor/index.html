@@ -115,7 +115,7 @@
 <p>This might not happen if you take care of your dependencies regularly; even better, it can be an opportunity to improve your codebase and learn new things that new versions bring.</p>
 <h2 id="basic-solutions-with-npm">Basic solutions with npm<a aria-hidden="true" tabindex="-1" href="#basic-solutions-with-npm"><span class="icon icon-link"></span></a></h2>
 <p>The simplest way to see if there are new versions of your dependencies is to run <code>npm outdated</code>, this  command will show you the current version of your dependencies and the latest version available, pretty useful to get an overview.</p>
-<img src="/_astro/example-npm-outdated.36f09d7a.png" widht="1080" height="186"/>
+<p><img alt="Example of the output of npm outdated"  src="/_astro/example-npm-outdated.36f09d7a_1IF9lh.webp" width="1080" height="186" loading="lazy" decoding="async"></p>
 <p>From here we can do <code>npm update</code>, it will update all the dependencies to the latest version, but this is not always the best option because it can break your codebase, so you need to be careful, it’s much better to update packages one by one and check if everything is working as expected by running your tests, especially with major versions.</p>
 <p>Another task to do is to check how many vulnerabilities you have in your dependencies, easy to do by running <code>npm audit</code>, this will show you the vulnerabilities and the severity of outdated packages.</p>
 <p>And while this tools are good <em>npm-check</em> does a better job combining and improving them.</p>
@@ -123,7 +123,7 @@
 <p>There are some tools that can help you with this task, one of them is <a href="https://www.npmjs.com/package/npm-check" target="_blank" rel="nofollow">npm-check</a>.</p>
 <p>The command <code>npx npm-check -u -E</code> will show an interactive list indicating the scope (<em>patch</em>, <em>minor</em>, <em>major</em>) of a newer version and a link to the changelog, so you can see what has changed and if it’s worth updating it.</p>
 <p>It makes incredibly easy to install each dependency once at a time to avoid breaking changes. My advice here is to always run the tests after installing any major version.</p>
-<img src="/_astro/example-npm-check.b0f7830f.png" widht="1282" height="202"/>
+<p><img alt="Example of the output of npm-check"  src="/_astro/example-npm-check.b0f7830f_Z2701BD.webp" width="1282" height="202" loading="lazy" decoding="async"></p>
 <h2 id="workflow">Workflow<a aria-hidden="true" tabindex="-1" href="#workflow"><span class="icon icon-link"></span></a></h2>
 <p>For maintenance tasks, I like to reserve some time on Fridays to do this kind of work, so I can end the week with a clean slate, and I can also use this time to learn new things.</p>
 <p>I usually go through all the new dependencies and read the changelog, if I see something interesting, I update it, or make notes for future improvements based on the new features.</p>
@@ -150,7 +150,7 @@
                     
                     <div class="metaSection">
                         <span class="title">Length</span>
-                        <span>3 min read (474 words)</span>
+                        <span>3 min read (466 words)</span>
                     </div> 
                     
                    <div class="metaSection">
@@ -167,10 +167,10 @@
                         </div>
     
                     <div class="centered">
-                        <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/become-your-companys-javascript-janitor/index.mdx">Did I make a mistake? Please consider sending a pull request</a>
+                        <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/become-your-companys-javascript-janitor/index.md">Did I make a mistake? Please consider sending a pull request</a>
                     </div>
 
-                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Become your company's JavaScript janitor","editor":"Daniel Doblado","genre":"dependencies update npm javascript devops maintenance","keywords":"dependencies update npm javascript devops maintenance","wordcount":474,"url":"https://dobla.do/blog/become-your-companys-javascript-janitor/","datePublished":"2023-08-16T00:00:00.000Z","dateCreated":"2023-08-16T00:00:00.000Z","description":"How to keep your JavaScript dependencies up-to-date and learn new things in the process","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Become your company's JavaScript janitor","editor":"Daniel Doblado","genre":"dependencies update npm javascript devops maintenance","keywords":"dependencies update npm javascript devops maintenance","wordcount":466,"url":"https://dobla.do/blog/become-your-companys-javascript-janitor/","datePublished":"2023-08-16T00:00:00.000Z","dateCreated":"2023-08-16T00:00:00.000Z","description":"How to keep your JavaScript dependencies up-to-date and learn new things in the process","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
                 </div>
             </details>
         <div class="progress"></div>

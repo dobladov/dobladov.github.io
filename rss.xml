@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Daniel Doblado</title><description>Personal site of Daniel Doblado</description><link>https://dobla.do/</link><item><title>Automatically deploy to GitHub Pages using Actions</title><link>https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</link><guid isPermaLink="true">https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</guid><description>How to automate your workflows increasing your productivity and reducing manual errors.</description><pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import actions from &apos;./actions.png&apos;&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src={actions.src} alt=&quot;List of github actions executed or failed.&quot; height={actions.height} width={actions.width} /&amp;gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Daniel Doblado</title><description>Personal site of Daniel Doblado</description><link>https://dobla.do/</link><item><title>Automatically deploy to GitHub Pages using Actions</title><link>https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</link><guid isPermaLink="true">https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</guid><description>How to automate your workflows increasing your productivity and reducing manual errors.</description><pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;This has become the main way to deploy most of my projects and it has greatly reduced the time invested doing it by hand, also avoiding headaches that you might be familiar with like, &quot;ohhh! I forgot to checkout the proper branch&quot;, &quot;I used the wrong script.&quot;, &quot;I accidentally deleted the database and all the backups while updating a CSS color&quot;.&lt;/p&gt;
 &lt;p&gt;After setting up this workflow your code will be automatically deployed after each commit to master without human interaction and without having to use other service than GitHub.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -157,14 +156,12 @@ jobs:
 &lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/last-time/blob/master/.github/workflows/deploy.yml&quot;&gt;Last-Time&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/mdx-blog/blob/master/.github/workflows/deploy.yml&quot;&gt;This blog&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>Become your company&apos;s JavaScript janitor</title><link>https://dobla.do/blog/become-your-companys-javascript-janitor/</link><guid isPermaLink="true">https://dobla.do/blog/become-your-companys-javascript-janitor/</guid><description>How to keep your JavaScript dependencies up-to-date and learn new things in the process</description><pubDate>Wed, 16 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import exampleOutdated  from &apos;./example-npm-outdated.png&apos;
-import exampleCheck  from &apos;./example-npm-check.png&apos;&lt;/p&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
+</content:encoded></item><item><title>Become your company&apos;s JavaScript janitor</title><link>https://dobla.do/blog/become-your-companys-javascript-janitor/</link><guid isPermaLink="true">https://dobla.do/blog/become-your-companys-javascript-janitor/</guid><description>How to keep your JavaScript dependencies up-to-date and learn new things in the process</description><pubDate>Wed, 16 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;How many times do you work on a project and many dependencies are outdated, and neither you nor your colleagues want to take care of them because it&apos;s a huge tech debt task, especially with major versions?&lt;/p&gt;
 &lt;p&gt;This might not happen if you take care of your dependencies regularly; even better, it can be an opportunity to improve your codebase and learn new things that new versions bring.&lt;/p&gt;
 &lt;h2&gt;Basic solutions with npm&lt;/h2&gt;
 &lt;p&gt;The simplest way to see if there are new versions of your dependencies is to run &lt;code&gt;npm outdated&lt;/code&gt;, this  command will show you the current version of your dependencies and the latest version available, pretty useful to get an overview.&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src={exampleOutdated.src} widht={exampleOutdated.width} height={exampleOutdated.height} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;From here we can do &lt;code&gt;npm update&lt;/code&gt;, it will update all the dependencies to the latest version, but this is not always the best option because it can break your codebase, so you need to be careful, it&apos;s much better to update packages one by one and check if everything is working as expected by running your tests, especially with major versions.&lt;/p&gt;
 &lt;p&gt;Another task to do is to check how many vulnerabilities you have in your dependencies, easy to do by running &lt;code&gt;npm audit&lt;/code&gt;, this will show you the vulnerabilities and the severity of outdated packages.&lt;/p&gt;
 &lt;p&gt;And while this tools are good &lt;em&gt;npm-check&lt;/em&gt; does a better job combining and improving them.&lt;/p&gt;
@@ -172,7 +169,7 @@ import exampleCheck  from &apos;./example-npm-check.png&apos;&lt;/p&gt;
 &lt;p&gt;There are some tools that can help you with this task, one of them is &lt;a href=&quot;https://www.npmjs.com/package/npm-check&quot;&gt;npm-check&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The command &lt;code&gt;npx npm-check -u -E&lt;/code&gt; will show an interactive list indicating the scope (&lt;em&gt;patch&lt;/em&gt;, &lt;em&gt;minor&lt;/em&gt;, &lt;em&gt;major&lt;/em&gt;) of a newer version and a link to the changelog, so you can see what has changed and if it&apos;s worth updating it.&lt;/p&gt;
 &lt;p&gt;It makes incredibly easy to install each dependency once at a time to avoid breaking changes. My advice here is to always run the tests after installing any major version.&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src={exampleCheck.src} widht={exampleCheck.width} height={exampleCheck.height} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;h2&gt;Workflow&lt;/h2&gt;
 &lt;p&gt;For maintenance tasks, I like to reserve some time on Fridays to do this kind of work, so I can end the week with a clean slate, and I can also use this time to learn new things.&lt;/p&gt;
 &lt;p&gt;I usually go through all the new dependencies and read the changelog, if I see something interesting, I update it, or make notes for future improvements based on the new features.&lt;/p&gt;
@@ -341,9 +338,64 @@ The display has two ribbons that each control half of the screen, I had to fix b
 &lt;p&gt;The process is almost the same but instead of adding pins for preassure, I just heated both screen connectors for around 5 minutes using the hair dryer&apos;s max temperature, somtimes adding preassure with the plasticl nozzle.&lt;/p&gt;
 &lt;p&gt;After mounting it again I got a gorgeous working screen.&lt;/p&gt;
 &lt;p&gt;&amp;lt;YoutubeVideo videoId=&quot;fPGboN25uWo&quot; videoTitle=&quot;Yamaha DGX-620 Grand Piano Screen Repair&quot; /&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>How I journal using Foam</title><link>https://dobla.do/blog/how-i-journal-using-foam/</link><guid isPermaLink="true">https://dobla.do/blog/how-i-journal-using-foam/</guid><description>Reasons to use Foam and why I think it&apos;s the best note-taking workflow.</description><pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import grapView from &apos;./graph-view.png&apos;
-import excalidrawPreview from &apos;./excalidraw-preview.png&apos;&lt;/p&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
+</content:encoded></item><item><title>Git tricks</title><link>https://dobla.do/blog/git-tricks/</link><guid isPermaLink="true">https://dobla.do/blog/git-tricks/</guid><description>Some of my tweaks for using git more efficiently</description><pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt; is one of my most used work tools, sharpening our tools helps us be more productive and save a lot of time. These are some of my tweaks to speed up my workflow when interacting with git.&lt;/p&gt;
+&lt;h2&gt;ZSH git aliases&lt;/h2&gt;
+&lt;p&gt;One of the first things I do after setting up my laptop is to install &lt;a href=&quot;https://www.zsh.org/&quot;&gt;ZSH&lt;/a&gt; and &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh My ZSH&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Their &lt;a href=&quot;https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index&quot;&gt;aliases&lt;/a&gt; have become completely natural to me, and I can&apos;t work without them.&lt;/p&gt;
+&lt;p&gt;While the list looks a bit overwhelming, it&apos;s actually very easy to remember them; most of the time it&apos;s the initial letter or how you would pronounce them, for example &lt;code&gt;git checkout&lt;/code&gt; becomes &lt;code&gt;gco&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;After a few uses, they become natural, and you will find yourself using them without thinking about it.&lt;/p&gt;
+&lt;p&gt;These are my most used shortcuts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git fetch&lt;/code&gt; -&amp;gt; &lt;code&gt;gf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add&lt;/code&gt; -&amp;gt; &lt;code&gt;ga&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -m&lt;/code&gt; -&amp;gt; &lt;code&gt;gcmsg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout&lt;/code&gt; -&amp;gt; &lt;code&gt;gco&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b&lt;/code&gt; -&amp;gt; &lt;code&gt;gcb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge&lt;/code&gt; -&amp;gt; &lt;code&gt;gm&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull origin &quot;$(git_current_branch)&lt;/code&gt; -&amp;gt; &lt;code&gt;ggpull&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin &quot;$(git_current_branch)&quot;&lt;/code&gt; -&amp;gt; &lt;code&gt;ggpush&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Commands that include variables like &lt;code&gt;git_current_branch&lt;/code&gt; same a huge amount of time and mental attention.&lt;/p&gt;
+&lt;h2&gt;Custom aliases&lt;/h2&gt;
+&lt;p&gt;Switching between my latest edited branches is common, and this command helps me quickly visualize my modified branches in order.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias branchOrder=&apos;git branch --sort=-committerdate&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Similar to the last command, it helps to switch branches in a quick way using &lt;a href=&quot;https://github.com/junegunn/fzf&quot;&gt;fuzzy finder&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias gcoi=&apos;git checkout $(git branch -a | fzf | xargs)&apos;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For one of my projects, we include the PR number on the &lt;a href=&quot;https://keepachangelog.com/&quot;&gt;Changelog&lt;/a&gt;, this command gives me the value without having to open the browser.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alias lastPR=&apos;gh pr list -s all --json number --jq &quot;.|=sort_by(.number)|last|.n&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Global git ignore&lt;/h2&gt;
+&lt;p&gt;I like to keep a global gitignore file, this is useful for ignoring files that are not specific to a project, for example, IDE configuration files.&lt;/p&gt;
+&lt;p&gt;Adding &lt;code&gt;devNotes*&lt;/code&gt; is especially useful as it helps me to write notes about a project while being sure they won&apos;t be pushed by accident to the repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nano .gitignore_global
+git config --global core.excludesfile ~/.gitignore_globa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;.DS_Store
+.vscode
+devNotes*
+dev-notes*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;ZSH theme&lt;/h2&gt;
+&lt;p&gt;ZSH themes are very customizable, I like to keep it simple, my current one is basically the default one with a few tweaks, a simpler way to display the &lt;strong&gt;branch name&lt;/strong&gt; on the left side and the &lt;strong&gt;SHA commit&lt;/strong&gt; on the right,  content on the &lt;code&gt;RPROMPT&lt;/code&gt; will be automatically hidden if the content goes over it.&lt;/p&gt;
+&lt;p&gt;That information helps me understand what I&apos;m working at a glance, avoiding the need to run &lt;code&gt;git status&lt;/code&gt; or &lt;code&gt;git branch&lt;/code&gt; to get that information.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PROMPT=&quot;%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )&quot;
+PROMPT+=&apos; %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)&apos;
+RPROMPT=&apos;%F{cyan}$(git_prompt_short_sha)%F{reset}&apos;
+ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg_bold[blue]%}(%{$fg[red]%}&quot;
+ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%} &quot;
+ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[blue]%}) %{$fg[yellow]%}✗&quot;
+ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Gh command&lt;/h2&gt;
+&lt;p&gt;This section is more suited to GitHub than git but since my workflow combines both, I think it&apos;s worth mentioning.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href=&quot;https://cli.github.com/&quot;&gt;GitHub CLI&lt;/a&gt; mostly for scripting, there are two very simple commands that save me a lot of time, &lt;code&gt;gh repo view -w&lt;/code&gt; and &lt;code&gt;gh pr view -w&lt;/code&gt;, they open the current repository or pull request in the browser.&lt;/p&gt;
+&lt;p&gt;Another command that I like to execute is &lt;code&gt;gh run watch&lt;/code&gt; to know when a workflow is finished, for example, when I&apos;m running tests on a PR, it can be pipped to the command &lt;code&gt;say [message]&lt;/code&gt; to get a notification when the workflow is finished.&lt;/p&gt;
+&lt;p&gt;There&apos;s more to this command, but these three options are really useful.&lt;/p&gt;
+</content:encoded></item><item><title>How I journal using Foam</title><link>https://dobla.do/blog/how-i-journal-using-foam/</link><guid isPermaLink="true">https://dobla.do/blog/how-i-journal-using-foam/</guid><description>Reasons to use Foam and why I think it&apos;s the best note-taking workflow.</description><pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Note-taking helps us focus, remember and organize our thoughts, it&apos;s an incredible tool to improve your work and yourself.&lt;/p&gt;
 &lt;p&gt;I&apos;ve been taking notes for a long time, but I never had a good system to keep them organized and more importantly go back and read/refine old notes.&lt;/p&gt;
 &lt;h2&gt;Why choosing Foam over alternatives&lt;/h2&gt;
@@ -353,7 +405,7 @@ import excalidrawPreview from &apos;./excalidraw-preview.png&apos;&lt;/p&gt;
 &lt;p&gt;This is why I love &lt;em&gt;Foam&lt;/em&gt;, it works the same way as as &lt;a href=&quot;https://obsidian.md/&quot;&gt;Obsidian&lt;/a&gt; or other &lt;a href=&quot;https://en.wikipedia.org/wiki/Zettelkasten&quot;&gt;Zettelkasten&lt;/a&gt; apps, but inside of &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VSCode&lt;/a&gt;, this is great because I always have &lt;em&gt;VSCode&lt;/em&gt; opened, meaning that I don&apos;t have to switch context, all my shortcuts and plugins work, I can use the same editor for everything.&lt;/p&gt;
 &lt;p&gt;The view of the graph is the main selling point to use &lt;em&gt;Obsidian&lt;/em&gt;, no more need to remember visiting old post, all is connected and can be accessed with a click, this is a game changer for me, I can see the connections between topics and ideas, I can see the evolution of my thoughts and how they are connected.&lt;/p&gt;
 &lt;p&gt;A graph view is something that I always wanted to have and what makes the difference in my total number of edits, and the view in &lt;em&gt;Foam&lt;/em&gt; works great, it can be positioned like any other tab which I always keep as a pinned tab with &lt;code&gt;cmd + k shift + enter&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src={grapView.src} widht={grapView.width} height={grapView.height} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;There&apos;s some sense of satisfaction after looking at all the connections on the graph that making me want to write even more.&lt;/p&gt;
 &lt;h2&gt;Journaling&lt;/h2&gt;
 &lt;p&gt;I make daily notes to keep track of what I did in a short resume format, it&apos;s easy to create a new document using the shortcuts like &lt;code&gt;/today&lt;/code&gt;, &lt;code&gt;/yesterday&lt;/code&gt; or &lt;code&gt;/+1w&lt;/code&gt; all of my notes can be connected using tags to other notes, this makes easy to visualize what I was doing on a particular day with the graph view without having to search or even open the note.&lt;/p&gt;
@@ -361,7 +413,7 @@ import excalidrawPreview from &apos;./excalidraw-preview.png&apos;&lt;/p&gt;
 &lt;p&gt;The integrations work great, multiple plugins doing one thing and doing it well.&lt;/p&gt;
 &lt;p&gt;I can integrate dynamic &lt;a href=&quot;https://excalidraw.com/&quot;&gt;Excalidraw&lt;/a&gt; documents, before I used to have a single &lt;em&gt;Excalidraw&lt;/em&gt; page opened in my browser with a bunch of cramped ideas, now I can simply create a new &lt;code&gt;idea.excalidraw.png&lt;/code&gt; and immediately work on separated contexts, I can&apos;t overstate how useful it has become.&lt;/p&gt;
 &lt;p&gt;On top of it, I can directly link the &lt;code&gt;excalidraw.png&lt;/code&gt; file inside Markdown and preview it while still being editable.&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src={excalidrawPreview.src} widht={excalidrawPreview.width} height={excalidrawPreview.height} /&amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;There are many other integrations, to &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image&quot;&gt;paste images&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-markdown-todo&quot;&gt;create todos&lt;/a&gt;, &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview&quot;&gt;preview images&lt;/a&gt; like shown in the last screenshot or simply have a &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one&quot;&gt;better markdown experience&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Best part is that all of these plugins are just &lt;em&gt;VSCode&lt;/em&gt; plugins that have functionality outside of &lt;em&gt;Foam&lt;/em&gt;, enriching your whole development experience.&lt;/p&gt;
 &lt;h2&gt;Backups&lt;/h2&gt;
@@ -414,7 +466,7 @@ Modeline    &quot;Mode 12&quot; 241.50 2560 2608 2640 2720 1440 1443 1448 1481 +
 &lt;li&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Xrandr&quot;&gt;Arch wiki xrandr&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://gist.github.com/datagrok/410d26e24ec51159cdfd2a400b809705&quot;&gt;Automate setting the screen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded></item><item><title>Making the Orb</title><link>https://dobla.do/blog/making-the-orb/</link><guid isPermaLink="true">https://dobla.do/blog/making-the-orb/</guid><description>How the interactive orb in my site was made.</description><pubDate>Fri, 18 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import orbMeme from &apos;./orb-meme.jpg&apos;
+</content:encoded></item><item><title>Making the Orb</title><link>https://dobla.do/blog/making-the-orb/</link><guid isPermaLink="true">https://dobla.do/blog/making-the-orb/</guid><description>How the interactive orb in my site was made.</description><pubDate>Sat, 19 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import orbMeme from &apos;./orb-meme.jpg&apos;
 import YoutubeVideo from &apos;#astro/components/YoutubeVideo.astro&apos;;
 import orb from &apos;./orb.webm&apos;
 import noJsOrb from &apos;./orb-no-js.webm&apos;&lt;/p&gt;
@@ -439,7 +491,12 @@ on &amp;lt;a href=&quot;https://codepen.io&quot;&amp;gt;CodePen&amp;lt;/a&amp;gt
 &lt;p&gt;One of the ideas I had in mind for the site theme was using &lt;a href=&quot;https://en.wikipedia.org/wiki/Chromatic_aberration&quot;&gt;chromatic aberration&lt;/a&gt; for some elements, adding it to the flow field really makes it pop just by displacing the particles in red, green and blue; At this point it looked good, but it had some problems, making it such a huge background element requires many particles, this can be an intensive task so if I could make it smaller.&lt;/p&gt;
 &lt;h2&gt;Inspiration&lt;/h2&gt;
 &lt;p&gt;The idea of making it an orb was inspired by this &lt;a href=&quot;https://twitter.com/wiz_mud/status/1687956508531679232&quot;&gt;meme&lt;/a&gt; and his wonderful game &lt;a href=&quot;http://wiz.zone&quot;&gt;Wiz.Zone&lt;/a&gt;, I thought using the orb and including the flow field inside would look interesting, while reducing the number of particles needed, I&apos;m definitely pleased with the result.&lt;/p&gt;
-&lt;p&gt;&amp;lt;img src={orbMeme.src} width={orbMeme.width} height={orbMeme.height} style={{width: &quot;27rem&quot;,
+&lt;p&gt;&amp;lt;img
+src={orbMeme.src}
+alt=&quot;Meme with two images, one says &apos;Our hands look like this..&apos; representing heavily used keyboards and tobaco stained fingers, the other says &apos;So yours can look like this&apos; with a picture of a hand with a glowing orb in the middle.&quot;
+width={orbMeme.width}
+height={orbMeme.height}
+style={{width: &quot;27rem&quot;,
 display: &quot;flex&quot;,
 margin: &quot;0 auto&quot;,
 maxWidth: &quot;100%&quot;,
@@ -458,7 +515,7 @@ left: 0,
 &lt;p&gt;&amp;lt;video width=&quot;400&quot; autoplay loop style={{display: &quot;flex&quot;, margin: &quot;0 auto&quot;}}&amp;gt;
 &amp;lt;source src={noJsOrb} type=&quot;video/webm&quot; /&amp;gt;
 &amp;lt;/video&amp;gt;&lt;/p&gt;
-</content:encoded></item><item><title>Reading books on my phone</title><link>https://dobla.do/blog/reading-books-on-my-phone/</link><guid isPermaLink="true">https://dobla.do/blog/reading-books-on-my-phone/</guid><description>While physical books are great, I prefer reading on my phone</description><pubDate>Fri, 18 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;What started as a test has become a habit, my mentality used to be &quot;reading physical books is better than digital&quot;, because we like to follow the motto:&lt;/p&gt;
+</content:encoded></item><item><title>Reading books on my phone</title><link>https://dobla.do/blog/reading-books-on-my-phone/</link><guid isPermaLink="true">https://dobla.do/blog/reading-books-on-my-phone/</guid><description>While physical books are great, I prefer reading on my phone</description><pubDate>Thu, 17 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;What started as a test has become a habit, my mentality used to be &quot;reading physical books is better than digital&quot;, because we like to follow the motto:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;reject modernity, 𝖊𝖒𝖇𝖗𝖆𝖈𝖊 𝖙𝖗𝖆𝖉𝖎𝖙𝖎𝖔𝖓&lt;/p&gt;
 &lt;/blockquote&gt;
