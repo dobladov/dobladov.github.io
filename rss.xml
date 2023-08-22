@@ -356,7 +356,7 @@ The display has two ribbons that each control half of the screen, I had to fix b
 &lt;li&gt;&lt;code&gt;git pull origin &quot;$(git_current_branch)&lt;/code&gt; -&amp;gt; &lt;code&gt;ggpull&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git push origin &quot;$(git_current_branch)&quot;&lt;/code&gt; -&amp;gt; &lt;code&gt;ggpush&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Commands that include variables like &lt;code&gt;git_current_branch&lt;/code&gt; same a huge amount of time and mental attention.&lt;/p&gt;
+&lt;p&gt;Commands that include variables like &lt;code&gt;git_current_branch&lt;/code&gt; save a huge amount of time and mental attention.&lt;/p&gt;
 &lt;h2&gt;Custom aliases&lt;/h2&gt;
 &lt;p&gt;Switching between my latest edited branches is common, and this command helps me quickly visualize my modified branches in order.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;alias branchOrder=&apos;git branch --sort=-committerdate&apos;
