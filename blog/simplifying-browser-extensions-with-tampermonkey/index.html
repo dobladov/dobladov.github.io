@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-COLB5UPU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="/orb512.png">
+<meta name="generator" content="Astro v2.10.1">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta http-equiv="content-language" content="en">
+
+<link rel="alternate" type="application/rss+xml" title="RSS for Daniel Doblado" href="/rss.xml">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://dobla.do/blog/simplifying-browser-extensions-with-tampermonkey/">
+
+<!-- Primary Meta Tags -->
+<title>Simplifying Browser Extensions with Tampermonkey - Daniel Doblado</title>
+<meta name="title" content="Simplifying Browser Extensions with Tampermonkey">
+<meta name="description" content="A brief introduction to Tampermonkey as an alternative to extensions.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dobla.do/blog/simplifying-browser-extensions-with-tampermonkey/">
+<meta property="og:title" content="Simplifying Browser Extensions with Tampermonkey">
+<meta property="og:description" content="A brief introduction to Tampermonkey as an alternative to extensions.">
+<meta property="og:image" content="https://dobla.do/orb512.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://dobla.do/blog/simplifying-browser-extensions-with-tampermonkey/">
+<meta property="twitter:title" content="Simplifying Browser Extensions with Tampermonkey">
+<meta property="twitter:description" content="A brief introduction to Tampermonkey as an alternative to extensions.">
+<meta property="twitter:image" content="https://dobla.do/orb512.png">
+    <link rel="stylesheet" href="/_astro/_...slug_.7ed00a20.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.dddb19c2.css" /><script type="module" src="/_astro/hoisted.335e4b07.js"></script></head>
+
+    
+
+    
+    
+    <body data-js="false" class="astro-COLB5UPU">
+        <a class="toArticle" href="#article">To the article</a>
+        
+
+<header class="astro-3EF6KSR2">
+	<nav class="astro-3EF6KSR2">
+		<h1 class="astro-3EF6KSR2">
+			<a href="/" class="astro-3EF6KSR2">Daniel Doblado</a>
+		</h1>
+		<div class="internalLinks astro-3EF6KSR2">
+			<a href="/blog" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Blog
+</a>
+			<a href="/projects" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Projects
+</a>
+			<a href="/tags" class="astro-3EF6KSR2 astro-EIMMU3LG">
+	Tags
+</a>
+			<a href="/rss.xml" class="astro-3EF6KSR2 astro-EIMMU3LG" title="RSS">
+	
+				<svg xml:space="preserve" viewBox="0 0 82.459 82.347" class="astro-3EF6KSR2" astro-icon="rss"><g transform="translate(-10.112 -9.668)"><circle cx="21.243" cy="80.884" r="11.131"/><path d="M18.229 40.126a7.626 7.626 0 1 0 0 15.253c15.917 0 28.865 12.95 28.865 28.865a7.626 7.626 0 0 0 7.628 7.627 7.627 7.627 0 0 0 7.627-7.627c0-24.326-19.793-44.118-44.12-44.118z"/><path d="M17.997 9.668a7.628 7.628 0 0 0 0 15.254c32.708.001 59.32 26.613 59.32 59.322a7.627 7.627 0 1 0 15.254 0c0-41.118-33.453-74.573-74.574-74.576z"/></g></svg>
+			
+</a>
+			<!-- <ThemeToggle /> -->
+		</div>
+	</nav>	
+</header>
+        <main class="astro-COLB5UPU">
+            <section class="astro-COLB5UPU">
+                
+    
+    <article id="article">
+        <header>
+                <h1 id="title">Simplifying Browser Extensions with Tampermonkey</h1>
+                <div class="date">
+                    4 min read — <time datetime="2023-08-28T00:00:00.000Z">
+	Aug 28, 2023
+</time>
+                    
+                </div>
+            </header>
+            
+            <aside>
+                    <ul>
+                        <li>
+                            <a title="Navigate to the start of the article" href="#title">Start</a>
+                        </li>
+                        <li>
+                                <a href="#introduction">Introduction</a>
+                            </li><li>
+                                <a href="#why-tampermonkey">Why Tampermonkey</a>
+                            </li><li>
+                                <a href="#other-usages">Other usages</a>
+                            </li><li>
+                                <a href="#conclusion">Conclusion</a>
+                            </li>
+                        <li>
+                            <a id="metadataLink" title="Navigate to the end of the article" href="#metadata">Metadata</a>
+                        </li>
+                    </ul>
+                </aside>
+
+            <p class="description">
+                A brief introduction to Tampermonkey as an alternative to extensions.
+            </p>
+            
+            
+	<h2 id="introduction">Introduction<a aria-hidden="true" tabindex="-1" href="#introduction"><span class="icon icon-link"></span></a></h2>
+<p>Not long ago, a coworker sent me the code of an extension he made, he did a wonderful work, and I loved how he came up with a better and simpler solution to the problem that I was overengineering. Unfortunately, the extension was only compatible with <em>Firefox</em> and I use <em>Chrome</em>.</p>
+<p>Initially, I thought it was going to be a matter of adapting the manifest a bit to make it work on <em>Chrome</em>, but it was not that simple; even when using the same manifest version, the way background scripts are loaded is different for each browser.</p>
+<p>Also, some parts of the code were incompatible with <em>Chrome</em>, for example, how the messages could be awaited in <em>Firefox</em>.</p>
+<p>I did end up porting the code, but it was not a simple task and left me wondering why it was so cumbersome to make an extension compatible with both browsers.</p>
+<p>After all, the changes to the extension APIs are meant to close the gap between browsers, but it seems to be a way to remove some of the more powerful APIs that get in the way of blocking advertisements.</p>
+<p>Overall, I’m very disappointed with the developer experience of web extensions. Porting <a href="https://github.com/dobladov/youtube2Anki" target="_blank" rel="nofollow">Youtube2Anki</a> to manifest <code>v3</code> was a lot of work with no benefits to the users, and with the drawback that I have to keep two different versions for <em>Firefox</em> (still <code>v2</code>) and <em>Chrome</em>, all these problems got me thinking about what I can do as an alternative.</p>
+<h2 id="why-tampermonkey">Why Tampermonkey<a aria-hidden="true" tabindex="-1" href="#why-tampermonkey"><span class="icon icon-link"></span></a></h2>
+<p><a href="https://www.tampermonkey.net/" target="_blank" rel="nofollow">Tapermonkey</a> allows you to execute scripts and styles on any site, exactly what a custom extension does, but it has some advantages:</p>
+<p>The development is much easier; it requires less boilerplate, and it’s effortless to debug due to not having multiple contexts handling many of the tedious permissions for you.</p>
+<p>On top of it, it reloads after saving the changes of a <em>Tampermonkey</em> script; there’s no need to reload the extension; just refresh the page and the changes are applied. This means faster iterations and less time wasted.</p>
+<p>In my case, I had three requirements.</p>
+<ol>
+<li>I needed to be able to inject a script at a specific URL.</li>
+<li>Send notifications to the user.</li>
+<li>Open a URL in a new tab.</li>
+</ol>
+<p>Tampermonkey allows me to do all of this.</p>
+<p>The permissions only require adding some <a href="https://www.tampermonkey.net/documentation.php?locale=en#meta:grant" target="_blank" rel="nofollow">grants</a>.</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #e1e4e8">// @grant        GM_notification</span></span>
+<span class="line"><span style="color: #e1e4e8">// @grant        GM_openInTab`</span></span></code></pre>
+<p>And executing only in the URL is as simple as <code>// @match  [your URl]</code></p>
+<p>After porting the logic, what used to be basically an app with multiple files, setup, packaging, etc, became a single file with a few lines of code that just focused on doing what it needed to do.</p>
+<p>Not only that, but there was no need for boilerplate to send data back and forth between the background script and the content script, and notifications could be simplified by not requiring a <code>tabId</code>.</p>
+<p>And the best part is that there are no differences between <em>Firefox</em> and <em>Chrome</em>; they both run the same script and execute the same functionality.</p>
+<h2 id="other-usages">Other usages<a aria-hidden="true" tabindex="-1" href="#other-usages"><span class="icon icon-link"></span></a></h2>
+<p>I have incorporated <em>Tampermonkey</em> into my work to the point that some other of my coworkers use it now, mostly dev code that we don’t want to deliver to production.</p>
+<p>For example, as a quick way to set special cookies or log users without a form, since most of the scripts only require a file, we can easily share them as a <a href="https://gist.github.com/" target="_blank" rel="nofollow">gist</a>, and they can be easily installed by anyone.</p>
+<h2 id="conclusion">Conclusion<a aria-hidden="true" tabindex="-1" href="#conclusion"><span class="icon icon-link"></span></a></h2>
+<p>I would only consider <em>Tampermonkey</em> a tool for developers; there are many cases where a full extension is needed, but for quick hacks or to avoid the hassle of maintaining multiple versions of the same extension, it’s a great tool.</p>
+
+
+            <!-- <Share title={title} description={description} url={href} /> -->
+
+            <details class="details">
+                <summary>Metadata</summary>
+                <div id="metadata">
+
+                    <div class="metaSection">
+                        <span class="title">Published</span>
+                        <time datetime="2023-08-28T00:00:00.000Z">
+	Aug 28, 2023
+</time>
+                    </div>
+                    
+                    
+                    <div class="metaSection">
+                        <span class="title">Length</span>
+                        <span>4 min read (628 words)</span>
+                    </div> 
+                    
+                   <div class="metaSection">
+                       <span class="title">License</span>
+                       <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                   </div>
+
+                    <div class="metaSection">
+                            <span class="title">Tags</span>
+                            
+                            <div class="tags">
+                                <a href="/tags/programming">#programming</a><a href="/tags/javascript">#javascript</a><a href="/tags/tampermonkey">#tampermonkey</a><a href="/tags/extensions">#extensions</a><a href="/tags/chrome">#chrome</a><a href="/tags/firefox">#firefox</a>
+                            </div>
+                        </div>
+    
+                    <div class="centered">
+                        <a class="correctLink" target="_blank" href="https://github.com/dobladov/astro-blog/edit/main/src/content/blog/simplifying-browser-extensions-with-tampermonkey.md">Did I make a mistake? Please consider sending a pull request</a>
+                    </div>
+
+                    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Simplifying Browser Extensions with Tampermonkey","editor":"Daniel Doblado","genre":"programming javascript tampermonkey extensions chrome firefox","keywords":"programming javascript tampermonkey extensions chrome firefox","wordcount":628,"url":"https://dobla.do/blog/simplifying-browser-extensions-with-tampermonkey/","datePublished":"2023-08-28T00:00:00.000Z","dateCreated":"2023-08-28T00:00:00.000Z","description":"A brief introduction to Tampermonkey as an alternative to extensions.","author":{"@type":"Person","name":"Daniel Doblado"}}</script>
+                </div>
+            </details>
+        <div class="progress"></div>
+    </article>
+
+            </section>
+        </main>
+        <footer class="astro-SZ7XMLTE">
+	<a target="_blank" href="https://codepen.io/dobladov" class="astro-SZ7XMLTE">CodePen</a>
+	<a target="_blank" href="mailto:danieldoblado@gmail.com" class="astro-SZ7XMLTE">E-Mail</a>
+	<a target="_blank" href="https://github.com/dobladov" class="astro-SZ7XMLTE">GitHub</a>
+	<a target="_blank" href="https://stackoverflow.com/users/2498992/daniel-doblado" class="astro-SZ7XMLTE">StackOverflow</a>
+	<a target="_blank" href="https://mastodon.social/@danieldobla" class="astro-SZ7XMLTE">Mastodon</a>
+	<a target="_blank" href="https://x.com/danieldobla" class="astro-SZ7XMLTE">𝕏</a>
+</footer>
+    </body></html>

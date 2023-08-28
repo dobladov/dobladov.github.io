@@ -541,6 +541,37 @@ left: 0,
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I try to be pragmatic, and while nostalgia is a huge component here, what made me read more during these past 4 years was my phone and the convenience that brings, so I&apos;ll keep doing it.&lt;/p&gt;
 &lt;p&gt;Who knows, maybe in the future we can have screens in our retinas, and I will write this post again.&lt;/p&gt;
+</content:encoded></item><item><title>Simplifying Browser Extensions with Tampermonkey</title><link>https://dobla.do/blog/simplifying-browser-extensions-with-tampermonkey/</link><guid isPermaLink="true">https://dobla.do/blog/simplifying-browser-extensions-with-tampermonkey/</guid><description>A brief introduction to Tampermonkey as an alternative to extensions.</description><pubDate>Mon, 28 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Not long ago, a coworker sent me the code of an extension he made, he did a wonderful work, and I loved how he came up with a better and simpler solution to the problem that I was overengineering. Unfortunately, the extension was only compatible with &lt;em&gt;Firefox&lt;/em&gt; and I use &lt;em&gt;Chrome&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Initially, I thought it was going to be a matter of adapting the manifest a bit to make it work on &lt;em&gt;Chrome&lt;/em&gt;, but it was not that simple; even when using the same manifest version, the way background scripts are loaded is different for each browser.&lt;/p&gt;
+&lt;p&gt;Also, some parts of the code were incompatible with &lt;em&gt;Chrome&lt;/em&gt;, for example, how the messages could be awaited in &lt;em&gt;Firefox&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I did end up porting the code, but it was not a simple task and left me wondering why it was so cumbersome to make an extension compatible with both browsers.&lt;/p&gt;
+&lt;p&gt;After all, the changes to the extension APIs are meant to close the gap between browsers, but it seems to be a way to remove some of the more powerful APIs that get in the way of blocking advertisements.&lt;/p&gt;
+&lt;p&gt;Overall, I&apos;m very disappointed with the developer experience of web extensions. Porting &lt;a href=&quot;https://github.com/dobladov/youtube2Anki&quot;&gt;Youtube2Anki&lt;/a&gt; to manifest &lt;code&gt;v3&lt;/code&gt; was a lot of work with no benefits to the users, and with the drawback that I have to keep two different versions for &lt;em&gt;Firefox&lt;/em&gt; (still &lt;code&gt;v2&lt;/code&gt;) and &lt;em&gt;Chrome&lt;/em&gt;, all these problems got me thinking about what I can do as an alternative.&lt;/p&gt;
+&lt;h2&gt;Why Tampermonkey&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.tampermonkey.net/&quot;&gt;Tapermonkey&lt;/a&gt; allows you to execute scripts and styles on any site, exactly what a custom extension does, but it has some advantages:&lt;/p&gt;
+&lt;p&gt;The development is much easier; it requires less boilerplate, and it&apos;s effortless to debug due to not having multiple contexts handling many of the tedious permissions for you.&lt;/p&gt;
+&lt;p&gt;On top of it, it reloads after saving the changes of a &lt;em&gt;Tampermonkey&lt;/em&gt; script; there&apos;s no need to reload the extension; just refresh the page and the changes are applied. This means faster iterations and less time wasted.&lt;/p&gt;
+&lt;p&gt;In my case, I had three requirements.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I needed to be able to inject a script at a specific URL.&lt;/li&gt;
+&lt;li&gt;Send notifications to the user.&lt;/li&gt;
+&lt;li&gt;Open a URL in a new tab.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tampermonkey allows me to do all of this.&lt;/p&gt;
+&lt;p&gt;The permissions only require adding some &lt;a href=&quot;https://www.tampermonkey.net/documentation.php?locale=en#meta:grant&quot;&gt;grants&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// @grant        GM_notification
+// @grant        GM_openInTab`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And executing only in the URL is as simple as &lt;code&gt;// @match  [your URl]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;After porting the logic, what used to be basically an app with multiple files, setup, packaging, etc, became a single file with a few lines of code that just focused on doing what it needed to do.&lt;/p&gt;
+&lt;p&gt;Not only that, but there was no need for boilerplate to send data back and forth between the background script and the content script, and notifications could be simplified by not requiring a &lt;code&gt;tabId&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;And the best part is that there are no differences between &lt;em&gt;Firefox&lt;/em&gt; and &lt;em&gt;Chrome&lt;/em&gt;; they both run the same script and execute the same functionality.&lt;/p&gt;
+&lt;h2&gt;Other usages&lt;/h2&gt;
+&lt;p&gt;I have incorporated &lt;em&gt;Tampermonkey&lt;/em&gt; into my work to the point that some other of my coworkers use it now, mostly dev code that we don&apos;t want to deliver to production.&lt;/p&gt;
+&lt;p&gt;For example, as a quick way to set special cookies or log users without a form, since most of the scripts only require a file, we can easily share them as a &lt;a href=&quot;https://gist.github.com/&quot;&gt;gist&lt;/a&gt;, and they can be easily installed by anyone.&lt;/p&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I would only consider &lt;em&gt;Tampermonkey&lt;/em&gt; a tool for developers; there are many cases where a full extension is needed, but for quick hacks or to avoid the hassle of maintaining multiple versions of the same extension, it&apos;s a great tool.&lt;/p&gt;
 </content:encoded></item><item><title>Why newsletters are not ideal</title><link>https://dobla.do/blog/why-newsletters-are-not-ideal/</link><guid isPermaLink="true">https://dobla.do/blog/why-newsletters-are-not-ideal/</guid><description>I don&apos;t like newsletters, and why I prefer RSS</description><pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Problems&lt;/h2&gt;
 &lt;p&gt;You enter a site, and the first thing you see is a popup asking for your email, that&apos;s plain rude, or even worse, you start reading the article, and it pops up, interrupting your reading&lt;/p&gt;
 &lt;p&gt;Please add it at the end of the article; if your article is good, I might give it a try.&lt;/p&gt;
