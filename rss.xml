@@ -416,6 +416,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[blue]%})&quot;
 &lt;p&gt;I use &lt;a href=&quot;https://cli.github.com/&quot;&gt;GitHub CLI&lt;/a&gt; mostly for scripting, there are two very simple commands that save me a lot of time, &lt;code&gt;gh repo view -w&lt;/code&gt; and &lt;code&gt;gh pr view -w&lt;/code&gt;, they open the current repository or pull request in the browser.&lt;/p&gt;
 &lt;p&gt;Another command that I like to execute is &lt;code&gt;gh run watch&lt;/code&gt; to know when a workflow is finished, for example, when I&apos;m running tests on a PR, it can be pipped to the command &lt;code&gt;say [message]&lt;/code&gt; to get a notification when the workflow is finished.&lt;/p&gt;
 &lt;p&gt;There&apos;s more to this command, but these three options are really useful.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 </content:encoded></item><item><title>How I journal using Foam</title><link>https://dobla.do/blog/how-i-journal-using-foam/</link><guid isPermaLink="true">https://dobla.do/blog/how-i-journal-using-foam/</guid><description>Reasons to use Foam and why I think it&apos;s the best note-taking workflow.</description><pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Note-taking helps us focus, remember and organize our thoughts, it&apos;s an incredible tool to improve your work and yourself.&lt;/p&gt;
 &lt;p&gt;I&apos;ve been taking notes for a long time, but I never had a good system to keep them organized and more importantly go back and read/refine old notes.&lt;/p&gt;
