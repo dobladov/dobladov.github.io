@@ -593,6 +593,7 @@ left: 0,
 &lt;p&gt;For example, as a quick way to set special cookies or log users without a form, since most of the scripts only require a file, we can easily share them as a &lt;a href=&quot;https://gist.github.com/&quot;&gt;gist&lt;/a&gt;, and they can be easily installed by anyone.&lt;/p&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;I would only consider &lt;em&gt;Tampermonkey&lt;/em&gt; a tool for developers; there are many cases where a full extension is needed, but for quick hacks or to avoid the hassle of maintaining multiple versions of the same extension, it&apos;s a great tool.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
 </content:encoded></item><item><title>Why newsletters are not ideal</title><link>https://dobla.do/blog/why-newsletters-are-not-ideal/</link><guid isPermaLink="true">https://dobla.do/blog/why-newsletters-are-not-ideal/</guid><description>I don&apos;t like newsletters, and why I prefer RSS</description><pubDate>Tue, 10 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Problems&lt;/h2&gt;
 &lt;p&gt;You enter a site, and the first thing you see is a popup asking for your email, that&apos;s plain rude, or even worse, you start reading the article, and it pops up, interrupting your reading&lt;/p&gt;
 &lt;p&gt;Please add it at the end of the article; if your article is good, I might give it a try.&lt;/p&gt;
