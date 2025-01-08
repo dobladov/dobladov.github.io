@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Daniel Doblado</title><description>Personal site of Daniel Doblado</description><link>https://dobla.do/</link><language>en</language><managingEditor>danieldoblado@gmail.com (Daniel Doblado)</managingEditor><webMaster>danieldoblado@gmail.com (Daniel Doblado)</webMaster><lastBuildDate>Wed, 08 Jan 2025 09:02:07 GMT</lastBuildDate><generator>Astro</generator><item><title>Fixing a Yamaha DGX-620 grand piano screen</title><link>https://dobla.do/blog/fixing-a-yamaha-dgx-620-screen/</link><guid isPermaLink="true">https://dobla.do/blog/fixing-a-yamaha-dgx-620-screen/</guid><description>How I got my piano and the problems of fixing it</description><pubDate>Sun, 01 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import YoutubeVideo from &quot;#astro/components/YoutubeVideo.astro&quot;;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Daniel Doblado</title><description>Personal site of Daniel Doblado</description><link>https://dobla.do/</link><language>en</language><managingEditor>danieldoblado@gmail.com (Daniel Doblado)</managingEditor><webMaster>danieldoblado@gmail.com (Daniel Doblado)</webMaster><lastBuildDate>Wed, 08 Jan 2025 09:05:54 GMT</lastBuildDate><generator>Astro</generator><item><title>Fixing a Yamaha DGX-620 grand piano screen</title><link>https://dobla.do/blog/fixing-a-yamaha-dgx-620-screen/</link><guid isPermaLink="true">https://dobla.do/blog/fixing-a-yamaha-dgx-620-screen/</guid><description>How I got my piano and the problems of fixing it</description><pubDate>Sun, 01 Jan 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;import YoutubeVideo from &quot;#astro/components/YoutubeVideo.astro&quot;;&lt;/p&gt;
 &lt;h2&gt;Introduction about the piano&lt;/h2&gt;
 &lt;p&gt;I bought a second hand &lt;a href=&quot;https://en.wikipedia.org/wiki/Yamaha_DGX-620&quot;&gt;Yamaha DGX-620 Grand Piano&lt;/a&gt; also known as the &amp;lt;i&amp;gt;YPG-625&amp;lt;/i&amp;gt;, the &amp;lt;abbr title=&quot;Yamaha Portable Grand&quot;&amp;gt;YPG&amp;lt;/abbr&amp;gt; stands for Yamaha Portable Grand, sure portable..., after carying it for 10 minutes by myself my back hurt for 3 days.&lt;/p&gt;
 &lt;h2&gt;Opinions and problems&lt;/h2&gt;
@@ -158,204 +158,7 @@ videoTitle=&quot;Yamaha DGX-620 Grand Piano Screen Repair&quot;
 &lt;p&gt;For my normal workflow, I write my notes during the day and next day review the changes using git, make corrections and push them to the repository, this helps to refresh my memory and improve the quality of the notes.&lt;/p&gt;
 &lt;p&gt;And again all of this without leaving &lt;em&gt;VSCode&lt;/em&gt; and completely open source, I can&apos;t thank enough all the &lt;a href=&quot;https://foambubble.github.io/foam/#thanks-and-attribution&quot;&gt;contributors&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-</content:encoded><category>notes</category><category>productivity</category><category>vscode</category><category>foam</category><category>obsidian</category><category>git</category><category>markdown</category><author>Daniel Doblado</author></item><item><title>Writing browser extensions without compiling</title><link>https://dobla.do/blog/writing-browser-extensions-without-compiling/</link><guid isPermaLink="true">https://dobla.do/blog/writing-browser-extensions-without-compiling/</guid><description>Positive development changes for one of my extensions.</description><pubDate>Thu, 24 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Complexity is the enemy&lt;/h2&gt;
-&lt;p&gt;Recently one of my most popular &lt;a href=&quot;https://github.com/dobladov/youtube2Anki&quot;&gt;extensions&lt;/a&gt; received a full refactor, previously it was made with just pure JavaScript; this was fine since at the beginning it was a proof of concept, it means no complex bundles, frameworks, compilers, ...&lt;/p&gt;
-&lt;p&gt;But with complexity comes necessity, managing the state of the connection between the extension and Anki and editing the sentences got complicated using imperative logic; It&apos;s amazing how used I became to declarative logic with &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; and this is something that I was missing for this extension.&lt;/p&gt;
-&lt;p&gt;I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making it longer to fix simple stuff like bugs.&lt;/p&gt;
-&lt;p&gt;So in order to build trust and avoid wasting reviewer&apos;s time, all the code needed to stay just as it was written.&lt;/p&gt;
-&lt;p&gt;Tools like &lt;a href=&quot;https://www.snowpack.dev/&quot;&gt;snowpack&lt;/a&gt; made me realize that with the advance of JavaScript modules, we might not need to compile what it&apos;s an interpreted language, seriously how did we reach this point.&lt;/p&gt;
-&lt;h2&gt;Coming with simpler solutions&lt;/h2&gt;
-&lt;p&gt;Let&apos;s look at the requirements, I wanted to use components, separate my logic from styles, use declarative logic, not set up any bundler (webpack, parcel, etc...) for this React would not make the cut since JSX needs some tooling and care.&lt;/p&gt;
-&lt;p&gt;So the decision went to &lt;a href=&quot;https://skruv.io/&quot;&gt;Skruv&lt;/a&gt;, this framework is amazing, not only is tiny, modular and simple to learn, the docs are amazing well organized and clear, covering all functionality without extras.&lt;/p&gt;
-&lt;p&gt;You can tell how nice the framework is by looking at this framework&apos;s goals:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;No build time or runtime dependencies, no parsers&lt;/li&gt;
-&lt;li&gt;Pretty small:
-&lt;ul&gt;
-&lt;li&gt;~350 LOC vDOM&lt;/li&gt;
-&lt;li&gt;~100 LOC State management&lt;/li&gt;
-&lt;li&gt;~300 LOC HTML/SVG helpers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Useable without bundling/compilation/transpilation&lt;/li&gt;
-&lt;li&gt;Fast enough for most normal use cases: &lt;a href=&quot;https://krausest.github.io/js-framework-benchmark/2023/table_chrome_116.0.5845.82.html&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Supports async components like &lt;code&gt;import()&lt;/code&gt; and &lt;code&gt;async&lt;/code&gt; generators&lt;/li&gt;
-&lt;li&gt;CSS scoping via shadow DOM&lt;/li&gt;
-&lt;li&gt;Hopefully grokable/understandable code&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The best part is that to use it I just have to import the files, that&apos;s it.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import { div } from &quot;./skruv/html.js&quot;;
-import { renderNode } from &quot;./skruv/vDOM.js&quot;;
-
-let root = document.querySelector(&quot;#root&quot;);
-
-root = renderNode(div({}, &quot;Hello world!&quot;), root);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;On top of those advantages, I love the nested syntax, far shorter than JSX, now that I think about it feels weird that we moved to write HTML in JS.&lt;/p&gt;
-&lt;p&gt;You might be also wondering, &quot;what if I need typescript, do you have to transpile?&quot; the answer is no, you can use &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html&quot;&gt;JSDocs with Typescript&lt;/a&gt; without having to create a single &lt;code&gt;ts&lt;/code&gt; file.&lt;/p&gt;
-&lt;h2&gt;How it ended&lt;/h2&gt;
-&lt;p&gt;I feel this change was a success, new code can be iterated easily without having to worry much about state or building, since the extension runs on modern browsers I don&apos;t have to care about babel, etc&lt;/p&gt;
-&lt;p&gt;Right now the only concern I have about the extension is &lt;em&gt;manifest v3&lt;/em&gt; which is not supported in Firefox yet, but this is a story for another post.&lt;/p&gt;
-&lt;p&gt;I have to say that I&apos;m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I&apos;ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes me want to keep contributing free, anti-traking open-source code.&lt;/p&gt;
-</content:encoded><category>javascript</category><category>extensions</category><category>tooling</category><category>framework</category><category>firefox</category><category>chrome</category><category>manifest</category><author>Daniel Doblado</author></item><item><title>Automatically deploy to GitHub Pages using Actions</title><link>https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</link><guid isPermaLink="true">https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</guid><description>How to automate your workflows increasing your productivity and reducing manual errors.</description><pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;This has become the main way to deploy most of my projects and it has greatly reduced the time invested doing it by hand, also avoiding headaches that you might be familiar with like, &quot;ohhh! I forgot to checkout the proper branch&quot;, &quot;I used the wrong script.&quot;, &quot;I accidentally deleted the database and all the backups while updating a CSS color&quot;.&lt;/p&gt;
-&lt;p&gt;After setting up this workflow your code will be automatically deployed after each commit to master without human interaction and without having to use other service than GitHub.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“There should be two tasks for a human being to perform to deploy software into a development, test, or production environment: to pick the version and environment and to press the “deploy” button.”
-― David Farley, Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Advantages&lt;/h2&gt;
-&lt;p&gt;If just mentioning the world &lt;em&gt;&quot;Automatically&quot;&lt;/em&gt; does not catch your attention, these are some of the main reasons why is worth to write some tiny workflows.&lt;/p&gt;
-&lt;h3&gt;Single source of truth&lt;/h3&gt;
-&lt;p&gt;Your code and and scrips for deployment are on same repository ensuring that all the information to create a build is on the repository and no manual process or tool is missing.&lt;/p&gt;
-&lt;h3&gt;Documentation of deployments&lt;/h3&gt;
-&lt;p&gt;The &lt;code&gt;.yml&lt;/code&gt; workflow shows how to do a proper deployment, other developers should know how it can be replicated locally; Even if there are no comments it might be easy to reverse engineer this files.&lt;/p&gt;
-&lt;h3&gt;Automated testing&lt;/h3&gt;
-&lt;p&gt;Before each build tests can be enforce to avoid putting code on production that might contain errors or not follow the code style guide.&lt;/p&gt;
-&lt;h3&gt;No more manual tasks&lt;/h3&gt;
-&lt;p&gt;This is clear, automating a process is always faster and in general less error prone than putting your code manually in production on a Friday before vacations.&lt;/p&gt;
-&lt;h3&gt;Multi-platform&lt;/h3&gt;
-&lt;p&gt;Multiple platforms can be tested while doing the deployment without the need of the developers of installing virtual machines.&lt;/p&gt;
-&lt;h3&gt;Cost&lt;/h3&gt;
-&lt;p&gt;Manual deployment will cost you at the very least time, GitHub actions are for free both in price and your time, why not use them?&lt;/p&gt;
-&lt;h2&gt;Creating a new Action&lt;/h2&gt;
-&lt;p&gt;Choose a repository, go to Actions and add new one.&lt;/p&gt;
-&lt;p&gt;We need to create a new file, in this case is called &lt;code&gt;deploy.yml&lt;/code&gt;, here we will define the process for the deployment, make sure to &lt;strong&gt;never put any secrets in here&lt;/strong&gt; since it will be committed to the repository.&lt;/p&gt;
-&lt;p&gt;The structure goes this way, we need a &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;on&lt;/code&gt; which circumstances we need to run this action, and which &lt;code&gt;jobs&lt;/code&gt; the action will execute.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build
-        uses: actions/setup-node@v4
-        with:
-          node-version: &quot;22.x&quot;
-      - run: |
-          npm install
-          npm test
-          npm run build
-          touch dist/.nojekyll
-          echo &quot;snoo.odyssey.codes&quot; &amp;gt; dist/CNAME
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;After saving this new workflow we should have a file called &lt;code&gt;deploy.yml&lt;/code&gt; inside &lt;code&gt;.github/workflows&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Immediately a new action will be triggered executing the workflow, making a new build and pushing it to the &lt;code&gt;gh-pages&lt;/code&gt; branch.&lt;/p&gt;
-&lt;p&gt;After is finish our app should be available at the repository public URL, the URL is show in Setting -&amp;gt; GitHub Pages, here you can also set a custom one.&lt;/p&gt;
-&lt;h3&gt;Functionality of each block&lt;/h3&gt;
-&lt;p&gt;Let&apos;s go trough each part of the code.&lt;/p&gt;
-&lt;p&gt;Here we are indicating push code to master should trigger this Action.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;on:
-  push:
-    branches:
-      - master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Inside of jobs we have to define the machine that will run the code, in this case Ubuntu.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;build-and-deploy:
-	runs-on: ubuntu-latest
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4&gt;Steps of the job&lt;/h4&gt;
-&lt;p&gt;The Action is now divided in different &lt;code&gt;steps&lt;/code&gt; that will be executed sequentially.&lt;/p&gt;
-&lt;p&gt;This step will checkout your repository to make the code available.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- name: Checkout
-  uses: actions/checkout@v4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now we set node.js and we use version 13 to run the code, I would recommend to read the docs to do some other interesting stuff like running multiple node versions.&lt;/p&gt;
-&lt;p&gt;This step will be similar for other code like go or rust&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- name: Build
-  uses: actions/setup-node@v4
-  with:
-    node-version: &quot;22.x&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The interesting part, here we have to define the process of actually building the site in this case something similar to what we would execute on our local machine to do it.&lt;/p&gt;
-&lt;p&gt;In this case I install the missing node packages, test the code and compile the site.&lt;/p&gt;
-&lt;p&gt;After this I added some special stuff for this repository, for example I make sure to create a file indicating that is not a Jekyll repository but this is actually not required in most cases.&lt;/p&gt;
-&lt;p&gt;After that I define the CNAME since I want this code to run on a custom domain instead of &lt;code&gt;user.github.io/repository&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- run: |
-  npm install
-  npm test
-  npm run build
-  touch dist/.nojekyll
-  echo &quot;snoo.odyssey.codes&quot; &amp;gt; dist/CNAME
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With this last step we push the code to the &lt;code&gt;gh-pages&lt;/code&gt; branch of the repository&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If any of this steps fails the process will stop ensuring no &quot;bad build&quot; will be out on production.&lt;/p&gt;
-&lt;h2&gt;More about it&lt;/h2&gt;
-&lt;h3&gt;Committing the build to a different repository&lt;/h3&gt;
-&lt;p&gt;I had the use case of having to push the build to a different repository from the one where the sources are.&lt;/p&gt;
-&lt;p&gt;In this case I wanted to have the code of my blog on a repository and deploy this build to a GitHubs&apos;s special repository named name.github.io, to serve my personal page from here since &apos;gh-pages&apos; does not work for this repository and my blog does not use Jekyll meaning the source code has to be on a separated repository and the build on master.&lt;/p&gt;
-&lt;p&gt;To create this token go to &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Developer settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Personal access tokens&lt;/code&gt; and create a new one.&lt;/p&gt;
-&lt;p&gt;With this configuration, we can use a personal token that needs to be set on Settings -&amp;gt; Secrets, since the &lt;code&gt;secrets.GITHUB_TOKEN&lt;/code&gt; only allows you to commit to your current repository.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- name: Deploy
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        external_repository: dobladov/dobladov.github.io
-        publish_branch: master
-        publish_dir: ./dist
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Testing multiple platforms&lt;/h3&gt;
-&lt;p&gt;Different platforms might use different commands.&lt;/p&gt;
-&lt;p&gt;For example let&apos;s say there&apos;s a &lt;code&gt;rm&lt;/code&gt; in the scripts of the package.js while this build should work on MacOS and Linux, unfortunately it will fail on Windows since the &lt;code&gt;rm&lt;/code&gt; command is not available, with a multiple platform test we will realize that using a solution like &lt;code&gt;rimraf&lt;/code&gt; instead of &lt;code&gt;rm&lt;/code&gt; will solve the problem for Windows.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;strategy:
-      matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{ matrix.platform }}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Writing a CNAME for custom domains&lt;/h3&gt;
-&lt;p&gt;If your deployments needs a custom domain don&apos;t forget to write this file on each build.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;echo &quot;snoo.odyssey.codes&quot; &amp;gt; dist/CNAME
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Running actions on other events&lt;/h3&gt;
-&lt;p&gt;Actions are not limited to push to master, is possible to also execute test or do other task on pull request or any kind of supported action, also to schedule this tasks using cron.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;on:
-  schedule:
-    - cron: &quot;0 * * * *&quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3&gt;Not only for deployments&lt;/h3&gt;
-&lt;p&gt;Actions can be used for creating new release packages, also notifications, emails can be send on each event, the limit is your imagination.&lt;/p&gt;
-&lt;h3&gt;Disadvantages&lt;/h3&gt;
-&lt;p&gt;One of the main disadvantages, is that like any other service if is down you will not be able of deploying using these workflows, It does not limit you to still do manual deployments for your application.&lt;/p&gt;
-&lt;p&gt;If you wonder why your perfectly working action does not work don&apos;t forget to check: https://status.github.com/&lt;/p&gt;
-&lt;p&gt;Actions are not a 100% reliable if the infrastructure of GitHub fails, I had a problem where GitHub did not trigger one of my builds when I merged new code, a way to force a new commit without changes is to execute &lt;code&gt;git commit --allow-empty&lt;/code&gt;, this will cause the action to be executed.&lt;/p&gt;
-&lt;h2&gt;Documentation&lt;/h2&gt;
-&lt;p&gt;Documentation worth reading:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/actions/setup-node&quot;&gt;Node Action documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/JamesIves/github-pages-deploy-action&quot;&gt;Deploy Action documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.github.com/en/actions/automating-your-workflow-with-github-actions&quot;&gt;GitHub Actions documentation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/actions/checkout&quot;&gt;Checkout Action documentation&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Some examples of my GitHub Actions:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/snoo/blob/master/.github/workflows/deploy.yml&quot;&gt;Snoo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/last-time/blob/master/.github/workflows/deploy.yml&quot;&gt;Last-Time&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/mdx-blog/blob/master/.github/workflows/deploy.yml&quot;&gt;This blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content:encoded><category>GitHub</category><category>devops</category><category>production</category><category>gh-pages</category><author>Daniel Doblado</author></item><item><title>How to configure a 4k screen in Linux</title><link>https://dobla.do/blog/how-to-configure-a-4k-screen-in-linux/</link><guid isPermaLink="true">https://dobla.do/blog/how-to-configure-a-4k-screen-in-linux/</guid><description>Troubles with your screen?, here is how to fix it.</description><pubDate>Sat, 18 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;You just got a new cool 4K monitor, you opened it, connected it to your Linux device and the first thing you face is that you can&apos;t select the maximum resolution for the screen.&lt;/p&gt;
+</content:encoded><category>notes</category><category>productivity</category><category>vscode</category><category>foam</category><category>obsidian</category><category>git</category><category>markdown</category><author>Daniel Doblado</author></item><item><title>How to configure a 4k screen in Linux</title><link>https://dobla.do/blog/how-to-configure-a-4k-screen-in-linux/</link><guid isPermaLink="true">https://dobla.do/blog/how-to-configure-a-4k-screen-in-linux/</guid><description>Troubles with your screen?, here is how to fix it.</description><pubDate>Sat, 18 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;You just got a new cool 4K monitor, you opened it, connected it to your Linux device and the first thing you face is that you can&apos;t select the maximum resolution for the screen.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;My disappointment is immeasurable and my day is ruined. --Reviewbrah&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -400,7 +203,46 @@ Modeline    &quot;Mode 12&quot; 241.50 2560 2608 2640 2720 1440 1443 1448 1481 +
 &lt;li&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/Xrandr&quot;&gt;Arch wiki xrandr&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://gist.github.com/datagrok/410d26e24ec51159cdfd2a400b809705&quot;&gt;Automate setting the screen&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content:encoded><category>4k</category><category>screen</category><category>Xrandr</category><category>KDE</category><author>Daniel Doblado</author></item><item><title>Crawling data from dynamically generated sites</title><link>https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</link><guid isPermaLink="true">https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</guid><description>How to get data from other sites using free online services</description><pubDate>Fri, 14 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Let&apos;s start with the need, why I had the necessity to do this,
+</content:encoded><category>4k</category><category>screen</category><category>Xrandr</category><category>KDE</category><author>Daniel Doblado</author></item><item><title>Writing browser extensions without compiling</title><link>https://dobla.do/blog/writing-browser-extensions-without-compiling/</link><guid isPermaLink="true">https://dobla.do/blog/writing-browser-extensions-without-compiling/</guid><description>Positive development changes for one of my extensions.</description><pubDate>Thu, 24 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Complexity is the enemy&lt;/h2&gt;
+&lt;p&gt;Recently one of my most popular &lt;a href=&quot;https://github.com/dobladov/youtube2Anki&quot;&gt;extensions&lt;/a&gt; received a full refactor, previously it was made with just pure JavaScript; this was fine since at the beginning it was a proof of concept, it means no complex bundles, frameworks, compilers, ...&lt;/p&gt;
+&lt;p&gt;But with complexity comes necessity, managing the state of the connection between the extension and Anki and editing the sentences got complicated using imperative logic; It&apos;s amazing how used I became to declarative logic with &lt;a href=&quot;https://reactjs.org/&quot;&gt;React&lt;/a&gt; and this is something that I was missing for this extension.&lt;/p&gt;
+&lt;p&gt;I could use React, the problem is that if the extension needs to be compiled, the review in the extensions stores will be more exhaustive, taking more time and making it longer to fix simple stuff like bugs.&lt;/p&gt;
+&lt;p&gt;So in order to build trust and avoid wasting reviewer&apos;s time, all the code needed to stay just as it was written.&lt;/p&gt;
+&lt;p&gt;Tools like &lt;a href=&quot;https://www.snowpack.dev/&quot;&gt;snowpack&lt;/a&gt; made me realize that with the advance of JavaScript modules, we might not need to compile what it&apos;s an interpreted language, seriously how did we reach this point.&lt;/p&gt;
+&lt;h2&gt;Coming with simpler solutions&lt;/h2&gt;
+&lt;p&gt;Let&apos;s look at the requirements, I wanted to use components, separate my logic from styles, use declarative logic, not set up any bundler (webpack, parcel, etc...) for this React would not make the cut since JSX needs some tooling and care.&lt;/p&gt;
+&lt;p&gt;So the decision went to &lt;a href=&quot;https://skruv.io/&quot;&gt;Skruv&lt;/a&gt;, this framework is amazing, not only is tiny, modular and simple to learn, the docs are amazing well organized and clear, covering all functionality without extras.&lt;/p&gt;
+&lt;p&gt;You can tell how nice the framework is by looking at this framework&apos;s goals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No build time or runtime dependencies, no parsers&lt;/li&gt;
+&lt;li&gt;Pretty small:
+&lt;ul&gt;
+&lt;li&gt;~350 LOC vDOM&lt;/li&gt;
+&lt;li&gt;~100 LOC State management&lt;/li&gt;
+&lt;li&gt;~300 LOC HTML/SVG helpers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Useable without bundling/compilation/transpilation&lt;/li&gt;
+&lt;li&gt;Fast enough for most normal use cases: &lt;a href=&quot;https://krausest.github.io/js-framework-benchmark/2023/table_chrome_116.0.5845.82.html&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Supports async components like &lt;code&gt;import()&lt;/code&gt; and &lt;code&gt;async&lt;/code&gt; generators&lt;/li&gt;
+&lt;li&gt;CSS scoping via shadow DOM&lt;/li&gt;
+&lt;li&gt;Hopefully grokable/understandable code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The best part is that to use it I just have to import the files, that&apos;s it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import { div } from &quot;./skruv/html.js&quot;;
+import { renderNode } from &quot;./skruv/vDOM.js&quot;;
+
+let root = document.querySelector(&quot;#root&quot;);
+
+root = renderNode(div({}, &quot;Hello world!&quot;), root);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;On top of those advantages, I love the nested syntax, far shorter than JSX, now that I think about it feels weird that we moved to write HTML in JS.&lt;/p&gt;
+&lt;p&gt;You might be also wondering, &quot;what if I need typescript, do you have to transpile?&quot; the answer is no, you can use &lt;a href=&quot;https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html&quot;&gt;JSDocs with Typescript&lt;/a&gt; without having to create a single &lt;code&gt;ts&lt;/code&gt; file.&lt;/p&gt;
+&lt;h2&gt;How it ended&lt;/h2&gt;
+&lt;p&gt;I feel this change was a success, new code can be iterated easily without having to worry much about state or building, since the extension runs on modern browsers I don&apos;t have to care about babel, etc&lt;/p&gt;
+&lt;p&gt;Right now the only concern I have about the extension is &lt;em&gt;manifest v3&lt;/em&gt; which is not supported in Firefox yet, but this is a story for another post.&lt;/p&gt;
+&lt;p&gt;I have to say that I&apos;m glad about the feedback people gave, this refactor was motivated because changes on Youtube made it fail and people reported issues with a lot of support, not only that, but I&apos;ve seen articles written in Vietnamese, Japanese and German in how to use the extension and how they find it useful, it really makes me want to keep contributing free, anti-traking open-source code.&lt;/p&gt;
+</content:encoded><category>javascript</category><category>extensions</category><category>tooling</category><category>framework</category><category>firefox</category><category>chrome</category><category>manifest</category><author>Daniel Doblado</author></item><item><title>Crawling data from dynamically generated sites</title><link>https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</link><guid isPermaLink="true">https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</guid><description>How to get data from other sites using free online services</description><pubDate>Fri, 14 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Let&apos;s start with the need, why I had the necessity to do this,
 Recently I created this &lt;a href=&quot;https://observablehq.com/@dobladov/coronavirus-2019-ncov&quot;&gt;Corona Virus Map&lt;/a&gt;, I wanted to be the fastest getting the data from the source site in Chinese, most of the other sites get the data periodical using a cron task and dumping their data locally.&lt;/p&gt;
 &lt;p&gt;In my case I wanted to get their data every time the map is loaded, ensuring more accurate results and completely avoiding any manual update of data.&lt;/p&gt;
 &lt;h2&gt;Parsing the site&lt;/h2&gt;
@@ -620,7 +462,165 @@ left: 0,
 &lt;p&gt;&amp;lt;video width=&quot;400&quot; autoplay loop style={{ maxWidth: &quot;100%&quot;, display: &quot;flex&quot;, margin: &quot;0 auto&quot; }}&amp;gt;
 &amp;lt;source src={noJsOrb} type=&quot;video/webm&quot; /&amp;gt;
 &amp;lt;/video&amp;gt;&lt;/p&gt;
-</content:encoded><category>javascript</category><category>logo</category><category>orb</category><category>p5</category><category>animation</category><category>flow field</category><category>chromatic-aberration</category><category>noise</category><category>dither</category><author>Daniel Doblado</author></item><item><title>Reading books on my phone</title><link>https://dobla.do/blog/reading-books-on-my-phone/</link><guid isPermaLink="true">https://dobla.do/blog/reading-books-on-my-phone/</guid><description>While physical books are great, I prefer reading on my phone</description><pubDate>Thu, 17 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;What started as a test has become a habit, my mentality used to be &quot;reading physical books is better than digital&quot;, because we like to follow the motto:&lt;/p&gt;
+</content:encoded><category>javascript</category><category>logo</category><category>orb</category><category>p5</category><category>animation</category><category>flow field</category><category>chromatic-aberration</category><category>noise</category><category>dither</category><author>Daniel Doblado</author></item><item><title>Automatically deploy to GitHub Pages using Actions</title><link>https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</link><guid isPermaLink="true">https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</guid><description>How to automate your workflows increasing your productivity and reducing manual errors.</description><pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;This has become the main way to deploy most of my projects and it has greatly reduced the time invested doing it by hand, also avoiding headaches that you might be familiar with like, &quot;ohhh! I forgot to checkout the proper branch&quot;, &quot;I used the wrong script.&quot;, &quot;I accidentally deleted the database and all the backups while updating a CSS color&quot;.&lt;/p&gt;
+&lt;p&gt;After setting up this workflow your code will be automatically deployed after each commit to master without human interaction and without having to use other service than GitHub.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“There should be two tasks for a human being to perform to deploy software into a development, test, or production environment: to pick the version and environment and to press the “deploy” button.”
+― David Farley, Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Advantages&lt;/h2&gt;
+&lt;p&gt;If just mentioning the world &lt;em&gt;&quot;Automatically&quot;&lt;/em&gt; does not catch your attention, these are some of the main reasons why is worth to write some tiny workflows.&lt;/p&gt;
+&lt;h3&gt;Single source of truth&lt;/h3&gt;
+&lt;p&gt;Your code and and scrips for deployment are on same repository ensuring that all the information to create a build is on the repository and no manual process or tool is missing.&lt;/p&gt;
+&lt;h3&gt;Documentation of deployments&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;.yml&lt;/code&gt; workflow shows how to do a proper deployment, other developers should know how it can be replicated locally; Even if there are no comments it might be easy to reverse engineer this files.&lt;/p&gt;
+&lt;h3&gt;Automated testing&lt;/h3&gt;
+&lt;p&gt;Before each build tests can be enforce to avoid putting code on production that might contain errors or not follow the code style guide.&lt;/p&gt;
+&lt;h3&gt;No more manual tasks&lt;/h3&gt;
+&lt;p&gt;This is clear, automating a process is always faster and in general less error prone than putting your code manually in production on a Friday before vacations.&lt;/p&gt;
+&lt;h3&gt;Multi-platform&lt;/h3&gt;
+&lt;p&gt;Multiple platforms can be tested while doing the deployment without the need of the developers of installing virtual machines.&lt;/p&gt;
+&lt;h3&gt;Cost&lt;/h3&gt;
+&lt;p&gt;Manual deployment will cost you at the very least time, GitHub actions are for free both in price and your time, why not use them?&lt;/p&gt;
+&lt;h2&gt;Creating a new Action&lt;/h2&gt;
+&lt;p&gt;Choose a repository, go to Actions and add new one.&lt;/p&gt;
+&lt;p&gt;We need to create a new file, in this case is called &lt;code&gt;deploy.yml&lt;/code&gt;, here we will define the process for the deployment, make sure to &lt;strong&gt;never put any secrets in here&lt;/strong&gt; since it will be committed to the repository.&lt;/p&gt;
+&lt;p&gt;The structure goes this way, we need a &lt;code&gt;name&lt;/code&gt;, &lt;code&gt;on&lt;/code&gt; which circumstances we need to run this action, and which &lt;code&gt;jobs&lt;/code&gt; the action will execute.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: actions/setup-node@v4
+        with:
+          node-version: &quot;22.x&quot;
+      - run: |
+          npm install
+          npm test
+          npm run build
+          touch dist/.nojekyll
+          echo &quot;snoo.odyssey.codes&quot; &amp;gt; dist/CNAME
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After saving this new workflow we should have a file called &lt;code&gt;deploy.yml&lt;/code&gt; inside &lt;code&gt;.github/workflows&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Immediately a new action will be triggered executing the workflow, making a new build and pushing it to the &lt;code&gt;gh-pages&lt;/code&gt; branch.&lt;/p&gt;
+&lt;p&gt;After is finish our app should be available at the repository public URL, the URL is show in Setting -&amp;gt; GitHub Pages, here you can also set a custom one.&lt;/p&gt;
+&lt;h3&gt;Functionality of each block&lt;/h3&gt;
+&lt;p&gt;Let&apos;s go trough each part of the code.&lt;/p&gt;
+&lt;p&gt;Here we are indicating push code to master should trigger this Action.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;on:
+  push:
+    branches:
+      - master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Inside of jobs we have to define the machine that will run the code, in this case Ubuntu.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;build-and-deploy:
+	runs-on: ubuntu-latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;Steps of the job&lt;/h4&gt;
+&lt;p&gt;The Action is now divided in different &lt;code&gt;steps&lt;/code&gt; that will be executed sequentially.&lt;/p&gt;
+&lt;p&gt;This step will checkout your repository to make the code available.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Checkout
+  uses: actions/checkout@v4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now we set node.js and we use version 13 to run the code, I would recommend to read the docs to do some other interesting stuff like running multiple node versions.&lt;/p&gt;
+&lt;p&gt;This step will be similar for other code like go or rust&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Build
+  uses: actions/setup-node@v4
+  with:
+    node-version: &quot;22.x&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The interesting part, here we have to define the process of actually building the site in this case something similar to what we would execute on our local machine to do it.&lt;/p&gt;
+&lt;p&gt;In this case I install the missing node packages, test the code and compile the site.&lt;/p&gt;
+&lt;p&gt;After this I added some special stuff for this repository, for example I make sure to create a file indicating that is not a Jekyll repository but this is actually not required in most cases.&lt;/p&gt;
+&lt;p&gt;After that I define the CNAME since I want this code to run on a custom domain instead of &lt;code&gt;user.github.io/repository&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- run: |
+  npm install
+  npm test
+  npm run build
+  touch dist/.nojekyll
+  echo &quot;snoo.odyssey.codes&quot; &amp;gt; dist/CNAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With this last step we push the code to the &lt;code&gt;gh-pages&lt;/code&gt; branch of the repository&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: dist
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If any of this steps fails the process will stop ensuring no &quot;bad build&quot; will be out on production.&lt;/p&gt;
+&lt;h2&gt;More about it&lt;/h2&gt;
+&lt;h3&gt;Committing the build to a different repository&lt;/h3&gt;
+&lt;p&gt;I had the use case of having to push the build to a different repository from the one where the sources are.&lt;/p&gt;
+&lt;p&gt;In this case I wanted to have the code of my blog on a repository and deploy this build to a GitHubs&apos;s special repository named name.github.io, to serve my personal page from here since &apos;gh-pages&apos; does not work for this repository and my blog does not use Jekyll meaning the source code has to be on a separated repository and the build on master.&lt;/p&gt;
+&lt;p&gt;To create this token go to &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Developer settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Personal access tokens&lt;/code&gt; and create a new one.&lt;/p&gt;
+&lt;p&gt;With this configuration, we can use a personal token that needs to be set on Settings -&amp;gt; Secrets, since the &lt;code&gt;secrets.GITHUB_TOKEN&lt;/code&gt; only allows you to commit to your current repository.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        personal_token: ${{ secrets.PERSONAL_TOKEN }}
+        external_repository: dobladov/dobladov.github.io
+        publish_branch: master
+        publish_dir: ./dist
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Testing multiple platforms&lt;/h3&gt;
+&lt;p&gt;Different platforms might use different commands.&lt;/p&gt;
+&lt;p&gt;For example let&apos;s say there&apos;s a &lt;code&gt;rm&lt;/code&gt; in the scripts of the package.js while this build should work on MacOS and Linux, unfortunately it will fail on Windows since the &lt;code&gt;rm&lt;/code&gt; command is not available, with a multiple platform test we will realize that using a solution like &lt;code&gt;rimraf&lt;/code&gt; instead of &lt;code&gt;rm&lt;/code&gt; will solve the problem for Windows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;strategy:
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Writing a CNAME for custom domains&lt;/h3&gt;
+&lt;p&gt;If your deployments needs a custom domain don&apos;t forget to write this file on each build.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &quot;snoo.odyssey.codes&quot; &amp;gt; dist/CNAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Running actions on other events&lt;/h3&gt;
+&lt;p&gt;Actions are not limited to push to master, is possible to also execute test or do other task on pull request or any kind of supported action, also to schedule this tasks using cron.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;on:
+  schedule:
+    - cron: &quot;0 * * * *&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Not only for deployments&lt;/h3&gt;
+&lt;p&gt;Actions can be used for creating new release packages, also notifications, emails can be send on each event, the limit is your imagination.&lt;/p&gt;
+&lt;h3&gt;Disadvantages&lt;/h3&gt;
+&lt;p&gt;One of the main disadvantages, is that like any other service if is down you will not be able of deploying using these workflows, It does not limit you to still do manual deployments for your application.&lt;/p&gt;
+&lt;p&gt;If you wonder why your perfectly working action does not work don&apos;t forget to check: https://status.github.com/&lt;/p&gt;
+&lt;p&gt;Actions are not a 100% reliable if the infrastructure of GitHub fails, I had a problem where GitHub did not trigger one of my builds when I merged new code, a way to force a new commit without changes is to execute &lt;code&gt;git commit --allow-empty&lt;/code&gt;, this will cause the action to be executed.&lt;/p&gt;
+&lt;h2&gt;Documentation&lt;/h2&gt;
+&lt;p&gt;Documentation worth reading:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/actions/setup-node&quot;&gt;Node Action documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/JamesIves/github-pages-deploy-action&quot;&gt;Deploy Action documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/en/actions/automating-your-workflow-with-github-actions&quot;&gt;GitHub Actions documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/actions/checkout&quot;&gt;Checkout Action documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Some examples of my GitHub Actions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/snoo/blob/master/.github/workflows/deploy.yml&quot;&gt;Snoo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/last-time/blob/master/.github/workflows/deploy.yml&quot;&gt;Last-Time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/dobladov/mdx-blog/blob/master/.github/workflows/deploy.yml&quot;&gt;This blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded><category>GitHub</category><category>devops</category><category>production</category><category>gh-pages</category><author>Daniel Doblado</author></item><item><title>Reading books on my phone</title><link>https://dobla.do/blog/reading-books-on-my-phone/</link><guid isPermaLink="true">https://dobla.do/blog/reading-books-on-my-phone/</guid><description>While physical books are great, I prefer reading on my phone</description><pubDate>Thu, 17 Aug 2023 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;What started as a test has become a habit, my mentality used to be &quot;reading physical books is better than digital&quot;, because we like to follow the motto:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;reject modernity, 𝖊𝖒𝖇𝖗𝖆𝖈𝖊 𝖙𝖗𝖆𝖉𝖎𝖙𝖎𝖔𝖓&lt;/p&gt;
 &lt;/blockquote&gt;
