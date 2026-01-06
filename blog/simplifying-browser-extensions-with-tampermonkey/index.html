@@ -10,7 +10,7 @@
 <p>After all, the changes to the extension APIs are meant to close the gap between browsers, but it seems to be a way to remove some of the more powerful APIs that get in the way of blocking advertisements.</p>
 <p>Overall, I’m very disappointed with the developer experience of web extensions. Porting <a href="https://github.com/dobladov/youtube2Anki" rel="nofollow" target="_blank">Youtube2Anki</a> to manifest <code>v3</code> was a lot of work with no benefits to the users, and with the drawback that I have to keep two different versions for <em>Firefox</em> (still <code>v2</code>) and <em>Chrome</em>, all these problems got me thinking about what I can do as an alternative.</p>
 <h2 id="why-tampermonkey">Why Tampermonkey<a aria-hidden="true" tabindex="-1" href="#why-tampermonkey"><span class="icon icon-link"></span></a></h2>
-<p><a href="https://www.tampermonkey.net/" rel="nofollow" target="_blank">Tapermonkey</a> allows you to execute scripts and styles on any site, exactly what a custom extension does, but it has some advantages:</p>
+<p><a href="https://www.tampermonkey.net/" rel="nofollow" target="_blank">Tampermonkey</a> allows you to execute scripts and styles on any site, exactly what a custom extension does, but it has some advantages:</p>
 <p>The development is much easier; it requires less boilerplate, and it’s effortless to debug due to not having multiple contexts handling many of the tedious permissions for you.</p>
 <p>On top of it, it reloads after saving the changes of a <em>Tampermonkey</em> script; there’s no need to reload the extension; just refresh the page and the changes are applied. This means faster iterations and less time wasted.</p>
 <p>In my case, I had three requirements.</p>
