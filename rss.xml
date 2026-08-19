@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Daniel Doblado</title><description>Personal site of Daniel Doblado</description><link>https://dobla.do/</link><language>en</language><managingEditor>danieldoblado@gmail.com (Daniel Doblado)</managingEditor><webMaster>danieldoblado@gmail.com (Daniel Doblado)</webMaster><lastBuildDate>Wed, 19 Aug 2026 14:01:36 GMT</lastBuildDate><generator>Astro</generator><item><title>Automatically deploy to GitHub Pages using Actions</title><link>https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</link><guid isPermaLink="true">https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</guid><description>How to automate your workflows increasing your productivity and reducing manual errors.</description><pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Daniel Doblado</title><description>Personal site of Daniel Doblado</description><link>https://dobla.do/</link><language>en</language><managingEditor>danieldoblado@gmail.com (Daniel Doblado)</managingEditor><webMaster>danieldoblado@gmail.com (Daniel Doblado)</webMaster><lastBuildDate>Wed, 19 Aug 2026 15:00:22 GMT</lastBuildDate><generator>Astro</generator><item><title>Automatically deploy to GitHub Pages using Actions</title><link>https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</link><guid isPermaLink="true">https://dobla.do/blog/automatically-deploy-to-github-pages-using-actions/</guid><description>How to automate your workflows increasing your productivity and reducing manual errors.</description><pubDate>Fri, 07 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;/p&gt;
 &lt;p&gt;This has become the main way to deploy most of my projects and it has greatly reduced the time invested doing it by hand, also avoiding headaches that you might be familiar with like, &quot;ohhh! I forgot to checkout the proper branch&quot;, &quot;I used the wrong script.&quot;, &quot;I accidentally deleted the database and all the backups while updating a CSS color&quot;.&lt;/p&gt;
 &lt;p&gt;After setting up this workflow your code will be automatically deployed after each commit to master without human interaction and without having to use other service than GitHub.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -221,7 +221,47 @@ jobs:
 &lt;p&gt;There are many ways to make games, and betting on open source should be the way to go, especially when game developers tend to be very talented people who are willing to collaborate on making a better engine.&lt;/p&gt;
 &lt;p&gt;Using a game engine brings many advantages. For me, having a community of people creating learning content is the greatest advantage, I can focus on making the game and not the engine, and I can export to many platforms.&lt;/p&gt;
 &lt;p&gt;&lt;/p&gt;
-</content:encoded><category>godot</category><category>gamedev</category><category>defold</category><category>unity</category><category>canvas</category><category>webgl</category><category>lua</category><category>games</category><category>phaser</category><category>javascript</category><category>pixi</category><category>threejs</category><category>unreal</category><category>raylib</category><category>bevy</category><author>Daniel Doblado</author></item><item><title>Crawling data from dynamically generated sites</title><link>https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</link><guid isPermaLink="true">https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</guid><description>How to get data from other sites using free online services</description><pubDate>Fri, 14 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Let&apos;s start with the need, why I had the necessity to do this,
+</content:encoded><category>godot</category><category>gamedev</category><category>defold</category><category>unity</category><category>canvas</category><category>webgl</category><category>lua</category><category>games</category><category>phaser</category><category>javascript</category><category>pixi</category><category>threejs</category><category>unreal</category><category>raylib</category><category>bevy</category><author>Daniel Doblado</author></item><item><title>Cooking recipes</title><link>https://dobla.do/blog/cooking-recipes/</link><guid isPermaLink="true">https://dobla.do/blog/cooking-recipes/</guid><description>Adding an easy way to showcase recipes in this site</description><pubDate>Wed, 19 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Inspired by Josh &lt;a href=&quot;https://joshnesbitt.dev/thoughts/recipe-data-your-mind-can-make-sense-of&quot;&gt;Nesbitt&apos;s article&lt;/a&gt;, I decided to keep the &lt;a href=&quot;/recipes&quot;&gt;recipes&lt;/a&gt; that I have tried the same way as on &lt;a href=&quot;https://joshnesbitt.cooking/&quot;&gt;his site&lt;/a&gt;. The &lt;a href=&quot;https://recipetables.com/&quot;&gt;RecipeTables&lt;/a&gt; format makes it so easy to understand the steps at a glance, and I love using generated charts similar to &lt;a href=&quot;https://mermaid.js.org/&quot;&gt;mermaid.js&lt;/a&gt;, which I use often for work, so it&apos;s a good fit for my workflow.&lt;/p&gt;
+&lt;h2&gt;Why not just Mermaid?&lt;/h2&gt;
+&lt;p&gt;While Mermaid can generate a nice diagram with similar information, setting the reading direction and doing the linking can become quite tedious with more unpredictable layout results.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flowchart LR
+    butter[&quot;Butter + sugar&quot;]
+    eggs[&quot;2 eggs&quot;]
+    bananas[&quot;3 ripe bananas&quot;]
+    vanilla[&quot;Vanilla&quot;]
+    dry[&quot;Flour + baking soda + salt&quot;]
+
+    cream([&quot;Cream + beat&quot;])
+    mash([&quot;Mash + stir&quot;])
+    whisk([&quot;Whisk dry&quot;])
+    fold([&quot;Fold together into batter&quot;])
+    bake([&quot;Bake — 175°C, 60 min&quot;])
+    loaf[&quot;🍞 Banana bread&quot;]
+
+    butter --&amp;gt; cream
+    eggs --&amp;gt; cream
+    bananas --&amp;gt; mash
+    vanilla --&amp;gt; mash
+    dry --&amp;gt; whisk
+
+    cream --&amp;gt; fold
+    mash --&amp;gt; fold
+    whisk --&amp;gt; fold
+
+    fold --&amp;gt; bake
+    bake --&amp;gt; loaf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;What recipe tables add&lt;/h2&gt;
+&lt;p&gt;Implementing the recipe tables format gives more flexibility, like the option to click which steps are already done, with the simplicity of always being read in the same direction. I consider removing mental load while cooking a crucial step — at least for me, this ensures the process is much more enjoyable.&lt;/p&gt;
+&lt;p&gt;I was able to add some extra logic like automatic calculation for servings, allergen detection, classification into &lt;em&gt;vegan&lt;/em&gt;/&lt;em&gt;vegetarian&lt;/em&gt;, and conversion between &lt;a href=&quot;https://en.wikipedia.org/wiki/Metric_system&quot;&gt;Metric&lt;/a&gt; / &lt;a href=&quot;https://en.wikipedia.org/wiki/United_States_customary_units&quot;&gt;US&lt;/a&gt; units. &amp;lt;sup&amp;gt;(Although everyone should use metric).&amp;lt;/sup&amp;gt;&lt;/p&gt;
+&lt;h2&gt;Preserving recipes&lt;/h2&gt;
+&lt;p&gt;Setting all of this in place gives me hope that I will be more willing to keep my cooking steps/reasoning and preserve some of my parent&apos;s recipes, even though they are far better cooks.&lt;/p&gt;
+&lt;p&gt;While I was creating short-form videos before in order to preserve the process, bookmarking the sources for future references was quite disorganized and made it tedious to remember the actual quantities and quirks of the recipes I followed. Creating videos is also too involved, it can take from 30 minutes to 1 hour to edit, without counting the recording.&lt;/p&gt;
+&lt;h2&gt;The result&lt;/h2&gt;
+&lt;p&gt;To see the end result, check the &lt;a href=&quot;/recipes&quot;&gt;recipes&lt;/a&gt; page, and if you try one and like it, please tell me.&lt;/p&gt;
+&lt;p&gt;Another inspirational site that I would like to mention is &lt;a href=&quot;https://grimgrains.com&quot;&gt;GrimGrains&lt;/a&gt; by &lt;a href=&quot;https://100r.co&quot;&gt;Hundred Rabbits&lt;/a&gt; — you can feel the care put into their recipes, with drawings for the ingredients (&lt;a href=&quot;https://grimgrains.com/site/quick_grilled_cheese.html&quot;&gt;example&lt;/a&gt;) and in-depth explanations for &lt;a href=&quot;https://grimgrains.com/site/lactofermentation.html&quot;&gt;processes&lt;/a&gt;.&lt;/p&gt;
+</content:encoded><author>Daniel Doblado</author></item><item><title>Crawling data from dynamically generated sites</title><link>https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</link><guid isPermaLink="true">https://dobla.do/blog/crawling-data-from-dynamically-generated-sites/</guid><description>How to get data from other sites using free online services</description><pubDate>Fri, 14 Feb 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Let&apos;s start with the need, why I had the necessity to do this,
 Recently I created this &lt;a href=&quot;https://observablehq.com/@dobladov/coronavirus-2019-ncov&quot;&gt;Corona Virus Map&lt;/a&gt;, I wanted to be the fastest getting the data from the source site in Chinese, most of the other sites get the data periodical using a cron task and dumping their data locally.&lt;/p&gt;
 &lt;p&gt;In my case I wanted to get their data every time the map is loaded, ensuring more accurate results and completely avoiding any manual update of data.&lt;/p&gt;
 &lt;h2&gt;Parsing the site&lt;/h2&gt;
